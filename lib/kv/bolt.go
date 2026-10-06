@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/lib/encoder"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/lib/encoder"
 	"go.etcd.io/bbolt"
 )
 
@@ -22,8 +22,7 @@ const (
 	initTime   = 24 * time.Hour // something reasonably long
 	dbFileMode = 0600
 	dbDirMode  = 0700
-	queueSize  = 2
-)
+	queueSize  = 2 )
 
 // DB represents a key-value database
 type DB struct {
@@ -45,8 +44,7 @@ type DB struct {
 var (
 	dbMap  = map[string]*DB{}
 	dbMut  sync.Mutex
-	atExit bool
-)
+	atExit bool )
 
 // Supported returns true on supported OSes
 func Supported() bool { return true }

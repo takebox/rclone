@@ -588,8 +588,7 @@ const (
 	// EntryDirectory should be used to classify remote paths in directories
 	EntryDirectory EntryType = iota // 0
 	// EntryObject should be used to classify remote paths in objects
-	EntryObject // 1
-)
+	EntryObject // 1 )
 
 // UnWrapper is an optional interfaces for Fs
 type UnWrapper interface {

@@ -13,13 +13,13 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/march"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/march"
+	"github.com/takebox/rclone/lib/readers"
 	"golang.org/x/text/unicode/norm"
 )
 
@@ -503,8 +503,7 @@ func (c *checkMarch) checkSum(ctx context.Context, obj fs.Object, download bool,
 		var (
 			objHash string
 			err     error
-			in      io.ReadCloser
-		)
+			in      io.ReadCloser )
 		defer func() {
 			c.matchSum(ctx, sumHash, objHash, obj, err, hashType)
 			<-c.tokens // get the token back to free up a slot

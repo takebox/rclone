@@ -70,8 +70,7 @@ func getRegistryVersionString(name string) string {
 		err     error
 		handle  windows.Handle
 		bufLen  uint32
-		valType uint32
-	)
+		valType uint32 )
 
 	err = windows.RegOpenKeyEx(windows.HKEY_LOCAL_MACHINE, regVersionKeyUTF16, 0, windows.KEY_READ|windows.KEY_WOW64_64KEY, &handle)
 	if err != nil {

@@ -24,8 +24,7 @@ var (
 
 // globals
 var (
-	out io.Writer = os.Stdout
-)
+	out io.Writer = os.Stdout )
 
 // genSetFrom generates code to set the public members of a from b
 //

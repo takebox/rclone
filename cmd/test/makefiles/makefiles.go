@@ -10,13 +10,13 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/cmd/test"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/lib/file"
-	"github.com/rclone/rclone/lib/random"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/cmd/test"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/lib/file"
+	"github.com/takebox/rclone/lib/random"
+	"github.com/takebox/rclone/lib/readers"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 )
@@ -209,8 +209,7 @@ func (r *chargenReader) Read(p []byte) (n int, err error) {
 	const (
 		startChar    = 0x20 // ' '
 		endChar      = 0x7E // '~' inclusive
-		charsPerLine = 72
-	)
+		charsPerLine = 72 )
 	for i := range p {
 		if r.written >= charsPerLine {
 			r.start++

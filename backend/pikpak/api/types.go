@@ -54,8 +54,7 @@ const (
 	PhaseTypePending    = "PHASE_TYPE_PENDING"
 	UploadTypeForm      = "UPLOAD_TYPE_FORM"
 	UploadTypeResumable = "UPLOAD_TYPE_RESUMABLE"
-	ListLimit           = 500
-)
+	ListLimit           = 500 )
 
 // ------------------------------------------------------------
 

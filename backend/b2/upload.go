@@ -14,14 +14,14 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/backend/b2/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/chunksize"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/pool"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/b2/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/chunksize"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/pool"
+	"github.com/takebox/rclone/lib/rest"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -405,8 +405,7 @@ func (up *largeUpload) Stream(ctx context.Context, initialUploadBlock *pool.RW) 
 	fs.Debugf(up.o, "Starting streaming of large file (id %q)", up.id)
 	var (
 		g, gCtx      = errgroup.WithContext(ctx)
-		hasMoreParts = true
-	)
+		hasMoreParts = true )
 	up.size = initialUploadBlock.Size()
 	up.parts = 0
 	for part := 0; hasMoreParts; part++ {
@@ -475,8 +474,7 @@ func (up *largeUpload) Copy(ctx context.Context) (err error) {
 	fs.Debugf(up.o, "Starting %s of large file in %d chunks (id %q)", up.what, up.parts, up.id)
 	var (
 		g, gCtx   = errgroup.WithContext(ctx)
-		remaining = up.size
-	)
+		remaining = up.size )
 	g.SetLimit(up.f.opt.UploadConcurrency)
 	for part := range up.parts {
 		// Fail fast, in case an errgroup managed function returns an error

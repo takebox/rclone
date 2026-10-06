@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/kv"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/kv"
 )
 
 const (

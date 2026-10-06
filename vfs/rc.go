@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/vfs/vfscache/writeback"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/vfs/vfscache/writeback"
 )
 
 const getVFSHelp = ` 

@@ -17,21 +17,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/cmd/serve/docker"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/fstest/testy"
-	"github.com/rclone/rclone/lib/file"
+	"github.com/takebox/rclone/cmd/mountlib"
+	"github.com/takebox/rclone/cmd/serve/docker"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/fstest/testy"
+	"github.com/takebox/rclone/lib/file"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	_ "github.com/rclone/rclone/backend/local"
-	_ "github.com/rclone/rclone/backend/memory"
-	_ "github.com/rclone/rclone/cmd/cmount"
-	_ "github.com/rclone/rclone/cmd/mount"
+	_ "github.com/takebox/rclone/backend/local"
+	_ "github.com/takebox/rclone/backend/memory"
+	_ "github.com/takebox/rclone/cmd/cmount"
+	_ "github.com/takebox/rclone/cmd/mount"
 )
 
 func initialise(ctx context.Context, t *testing.T) (string, fs.Fs) {
@@ -205,8 +205,7 @@ func TestDockerPluginLogic(t *testing.T) {
 
 const (
 	httpTimeout = 2 * time.Second
-	tempDelay   = 10 * time.Millisecond
-)
+	tempDelay   = 10 * time.Millisecond )
 
 type APIClient struct {
 	t    *testing.T
@@ -249,8 +248,7 @@ func (a *APIClient) request(path string, in, out any, wantErr bool) {
 	var (
 		dataIn  []byte
 		dataOut []byte
-		err     error
-	)
+		err     error )
 
 	realm := "VolumeDriver"
 	if path == "Activate" {

@@ -8,7 +8,7 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 // About gets quota information

@@ -22,23 +22,23 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/backend/b2/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/list"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/bucket"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/multipart"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/pool"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/b2/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/list"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/bucket"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/multipart"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/pool"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 const (
@@ -62,8 +62,7 @@ const (
 	defaultChunkSize    = 96 * fs.Mebi
 	defaultUploadCutoff = 200 * fs.Mebi
 	largeFileCopyCutoff = 4 * fs.Gibi // 5E9 is the max
-	defaultMaxAge       = 24 * time.Hour
-)
+	defaultMaxAge       = 24 * time.Hour )
 
 // Globals
 var (

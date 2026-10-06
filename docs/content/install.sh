@@ -82,17 +82,14 @@ case $OS in
   Darwin)
     OS='osx'
     binTgtDir=/usr/local/bin
-    man1TgtDir=/usr/local/share/man/man1
-    ;;
+    man1TgtDir=/usr/local/share/man/man1 ;;
   SunOS)
     OS='solaris'
     echo 'OS not supported'
-    exit 2
-    ;;
+    exit 2 ;;
   *)
     echo 'OS not supported'
-    exit 2
-    ;;
+    exit 2 ;;
 esac
 
 OS_type="$(uname -m)"
@@ -117,8 +114,7 @@ case "$OS_type" in
     ;;
   *)
     echo 'OS type not supported'
-    exit 2
-    ;;
+    exit 2 ;;
 esac
 
 
@@ -165,8 +161,7 @@ case "$OS" in
         mkdir -p /usr/local/share/man/man1
         cp rclone.1 /usr/local/share/man/man1/
         mandb
-    fi
-    ;;
+    fi ;;
   'freebsd'|'openbsd'|'netbsd')
     #binary
     cp rclone /usr/bin/rclone.new
@@ -175,8 +170,7 @@ case "$OS" in
     #manual
     mkdir -p /usr/local/man/man1
     cp rclone.1 /usr/local/man/man1/
-    makewhatis
-    ;;
+    makewhatis ;;
   'osx')
     #binary
     mkdir -m 0555 -p ${binTgtDir}
@@ -186,8 +180,7 @@ case "$OS" in
     #manual
     mkdir -m 0555 -p ${man1TgtDir}
     cp rclone.1 ${man1TgtDir}    
-    chmod a=r ${man1TgtDir}/rclone.1
-    ;;
+    chmod a=r ${man1TgtDir}/rclone.1 ;;
   *)
     echo 'OS not supported'
     exit 2

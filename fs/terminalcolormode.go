@@ -7,8 +7,7 @@ type TerminalColorMode = Enum[terminalColorModeChoices]
 const (
 	TerminalColorModeAuto TerminalColorMode = iota
 	TerminalColorModeNever
-	TerminalColorModeAlways
-)
+	TerminalColorModeAlways )
 
 type terminalColorModeChoices struct{}
 

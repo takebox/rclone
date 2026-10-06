@@ -20,11 +20,11 @@ import (
 	"strings"
 	"time"
 
-	_ "github.com/rclone/rclone/backend/all" // import all fs
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configfile"
-	"github.com/rclone/rclone/fstest/runs"
-	"github.com/rclone/rclone/lib/pacer"
+	_ "github.com/takebox/rclone/backend/all" // import all fs
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configfile"
+	"github.com/takebox/rclone/fstest/runs"
+	"github.com/takebox/rclone/lib/pacer"
 )
 
 func init() {

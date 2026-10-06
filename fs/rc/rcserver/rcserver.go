@@ -17,16 +17,16 @@ import (
 	"time"
 
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/list"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/fs/rc/jobs"
-	"github.com/rclone/rclone/fs/rc/webgui"
-	libhttp "github.com/rclone/rclone/lib/http"
-	"github.com/rclone/rclone/lib/http/serve"
-	"github.com/rclone/rclone/lib/random"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/list"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/fs/rc/jobs"
+	"github.com/takebox/rclone/fs/rc/webgui"
+	libhttp "github.com/takebox/rclone/lib/http"
+	"github.com/takebox/rclone/lib/http/serve"
+	"github.com/takebox/rclone/lib/random"
 	"github.com/skratchdot/open-golang/open"
 )
 
@@ -211,8 +211,7 @@ func (s *Server) handlePost(w http.ResponseWriter, r *http.Request, path string)
 
 	var (
 		contentTypeMediaType string
-		contentTypeParams    map[string]string
-	)
+		contentTypeParams    map[string]string )
 	if contentType != "" {
 		var err error
 		contentTypeMediaType, contentTypeParams, err = mime.ParseMediaType(contentType)

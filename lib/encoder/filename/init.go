@@ -32,8 +32,7 @@ const (
 	tableSCSUPlain = 60
 	tableRLE       = 61
 	tableCustom    = 62
-	tableReserved  = 63
-)
+	tableReserved  = 63 )
 
 // predefined tables as base64 URL encoded string.
 var tablesData = [64]string{

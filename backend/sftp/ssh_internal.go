@@ -7,9 +7,9 @@ import (
 	"io"
 	"net"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/lib/proxy"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/lib/proxy"
 	"golang.org/x/crypto/ssh"
 )
 
@@ -27,8 +27,7 @@ func (f *Fs) newSSHClientInternal(ctx context.Context, network, addr string, ssh
 	baseDialer := fshttp.NewDialer(ctx)
 	var (
 		conn net.Conn
-		err  error
-	)
+		err  error )
 	if f.opt.SocksProxy != "" {
 		conn, err = proxy.SOCKS5Dial(network, addr, f.opt.SocksProxy, baseDialer)
 	} else if f.proxyURL != nil {

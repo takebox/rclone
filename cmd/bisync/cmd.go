@@ -14,14 +14,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/cmd/bisync/bilib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/hash"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/cmd/bisync/bilib"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/hash"
 
 	"github.com/spf13/cobra"
 )
@@ -79,8 +79,7 @@ type CheckSyncMode int
 const (
 	CheckSyncTrue  CheckSyncMode = iota // Compare final listings (default)
 	CheckSyncFalse                      // Disable comparison of final listings
-	CheckSyncOnly                       // Only compare listings from the last run, do not sync
-)
+	CheckSyncOnly                       // Only compare listings from the last run, do not sync )
 
 func (x CheckSyncMode) String() string {
 	switch x {

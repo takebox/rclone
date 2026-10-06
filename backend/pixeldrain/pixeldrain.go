@@ -12,21 +12,20 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 const (
 	timeFormat    = time.RFC3339Nano
 	minSleep      = pacer.MinSleep(10 * time.Millisecond)
 	maxSleep      = pacer.MaxSleep(1 * time.Second)
-	decayConstant = pacer.DecayConstant(2) // bigger for slower decay, exponential
-)
+	decayConstant = pacer.DecayConstant(2) // bigger for slower decay, exponential )
 
 // Register with Fs
 func init() {

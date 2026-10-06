@@ -18,5 +18,4 @@ const (
 	CutoffModeHard CutoffMode = iota
 	CutoffModeSoft
 	CutoffModeCautious
-	CutoffModeDefault = CutoffModeHard
-)
+	CutoffModeDefault = CutoffModeHard )

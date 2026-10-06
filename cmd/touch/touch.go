@@ -8,12 +8,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/fspath"
-	"github.com/rclone/rclone/fs/object"
-	"github.com/rclone/rclone/fs/operations"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/fspath"
+	"github.com/takebox/rclone/fs/object"
+	"github.com/takebox/rclone/fs/operations"
 	"github.com/spf13/cobra"
 )
 
@@ -21,8 +21,7 @@ var (
 	notCreateNewFile bool
 	timeAsArgument   string
 	localTime        bool
-	recursive        bool
-)
+	recursive        bool )
 
 const (
 	defaultLayout          string = "060102"

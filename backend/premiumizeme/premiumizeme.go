@@ -28,21 +28,21 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/backend/premiumizeme/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/dircache"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/oauthutil"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/random"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/premiumizeme/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/dircache"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/oauthutil"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/random"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 const (
@@ -304,7 +304,7 @@ func NewFs(ctx context.Context, name, root string, m configmap.Mapper) (fs.Fs, e
 		f.features.Fill(ctx, &tempF)
 		// XXX: update the old f here instead of returning tempF, since
 		// `features` were already filled with functions having *f as a receiver.
-		// See https://github.com/rclone/rclone/issues/2182
+		// See https://github.com/takebox/rclone/issues/2182
 		f.dirCache = tempF.dirCache
 		f.root = tempF.root
 		// return an error with an fs which points to the parent

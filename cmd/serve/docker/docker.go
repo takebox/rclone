@@ -10,12 +10,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/cmd/serve"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/vfs"
-	"github.com/rclone/rclone/vfs/vfsflags"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/cmd/mountlib"
+	"github.com/takebox/rclone/cmd/serve"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/vfs"
+	"github.com/takebox/rclone/vfs/vfsflags"
 )
 
 var (
@@ -29,8 +29,7 @@ var (
 	socketGid   = syscall.Getgid()
 	canPersist  = false // allows writing to config file
 	forgetState = false
-	noSpec      = false
-)
+	noSpec      = false )
 
 //go:embed docker.md
 var longHelp string

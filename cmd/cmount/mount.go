@@ -12,11 +12,11 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/buildinfo"
-	"github.com/rclone/rclone/vfs"
+	"github.com/takebox/rclone/cmd/mountlib"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/buildinfo"
+	"github.com/takebox/rclone/vfs"
 	"github.com/winfsp/cgofuse/fuse"
 )
 

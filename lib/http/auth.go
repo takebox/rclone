@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"html/template"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/flags"
 	"github.com/spf13/pflag"
 )
 

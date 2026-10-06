@@ -12,9 +12,9 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fstest"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fstest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

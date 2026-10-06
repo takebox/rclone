@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/cmd/bisync/bilib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/lib/terminal"
+	"github.com/takebox/rclone/cmd/bisync/bilib"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/lib/terminal"
 	"golang.org/x/text/unicode/norm"
 )
 
@@ -28,15 +28,13 @@ const (
 	deltaLarger
 	deltaSmaller
 	deltaHash
-	deltaDeleted
-)
+	deltaDeleted )
 
 const (
 	deltaSize     delta = deltaLarger | deltaSmaller
 	deltaTime     delta = deltaNewer | deltaOlder
 	deltaModified delta = deltaTime | deltaSize | deltaHash
-	deltaOther    delta = deltaNew | deltaTime | deltaSize | deltaHash
-)
+	deltaOther    delta = deltaNew | deltaTime | deltaSize | deltaHash )
 
 func (d delta) is(cond delta) bool {
 	return d&cond != 0

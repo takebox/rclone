@@ -164,8 +164,7 @@ func (rw *RW) eof() bool {
 func (rw *RW) Read(p []byte) (n int, err error) {
 	var (
 		nn   int
-		page []byte
-	)
+		page []byte )
 	for len(p) > 0 {
 		if rw.eof() {
 			return n, io.EOF
@@ -192,8 +191,7 @@ func (rw *RW) Read(p []byte) (n int, err error) {
 func (rw *RW) WriteTo(w io.Writer) (n int64, err error) {
 	var (
 		nn   int
-		page []byte
-	)
+		page []byte )
 	for !rw.eof() {
 		page = rw.readPage(rw.out)
 		nn, err = w.Write(page)
@@ -236,8 +234,7 @@ func (rw *RW) writePage() (page []byte) {
 func (rw *RW) Write(p []byte) (n int, err error) {
 	var (
 		nn   int
-		page []byte
-	)
+		page []byte )
 	for len(p) > 0 {
 		page = rw.writePage()
 		nn = copy(page, p)
@@ -261,8 +258,7 @@ func (rw *RW) Write(p []byte) (n int, err error) {
 func (rw *RW) ReadFrom(r io.Reader) (n int64, err error) {
 	var (
 		nn   int
-		page []byte
-	)
+		page []byte )
 	for err == nil {
 		page = rw.writePage()
 		nn, err = r.Read(page)

@@ -6,11 +6,11 @@ import (
 	"io"
 	"testing"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fstest/mockobject"
-	"github.com/rclone/rclone/lib/pool"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fstest/mockobject"
+	"github.com/takebox/rclone/lib/pool"
+	"github.com/takebox/rclone/lib/readers"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -93,8 +93,7 @@ func TestReOpen(t *testing.T) {
 				expectedRead       = reOpenTestcontents
 				rangeOption        *fs.RangeOption
 				seekOption         *fs.SeekOption
-				unknownSize        = false
-			)
+				unknownSize        = false )
 			switch testName {
 			case "Normal":
 			case "WithRangeOption":

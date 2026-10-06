@@ -4,12 +4,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/cmd/mountlib"
+	"github.com/takebox/rclone/fs"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	_ "github.com/rclone/rclone/backend/local"
+	_ "github.com/takebox/rclone/backend/local"
 )
 
 func TestApplyOptions(t *testing.T) {

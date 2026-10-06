@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
@@ -107,8 +107,7 @@ const (
 	logFormatShortFile
 	logFormatPid
 	logFormatNoLevel
-	logFormatJSON
-)
+	logFormatJSON )
 
 type logFormatChoices struct{}
 

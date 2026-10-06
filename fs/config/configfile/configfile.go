@@ -9,11 +9,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/lib/file"
-	"github.com/unknwon/goconfig" //nolint:misspell // Don't include misspell when running golangci-lint
-)
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/lib/file"
+	"github.com/unknwon/goconfig" //nolint:misspell // Don't include misspell when running golangci-lint )
 
 // Install installs the config file handler
 func Install() {

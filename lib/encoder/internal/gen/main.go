@@ -10,14 +10,13 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/encoder"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/lib/encoder"
 )
 
 const (
 	edgeLeft = iota
-	edgeRight
-)
+	edgeRight )
 
 type mapping struct {
 	mask     encoder.MultiEncoder
@@ -488,8 +487,7 @@ func buildTestString(mappings, testMappings []mapping, fill ...[]rune) (string, 
 	combinedMappings := append(mappings, testMappings...)
 	var (
 		rIn  []rune
-		rOut []rune
-	)
+		rOut []rune )
 	for _, m := range mappings {
 		if len(m.src) == 0 || len(m.src) != len(m.dst) {
 			panic("invalid length")

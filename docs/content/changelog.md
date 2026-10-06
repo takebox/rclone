@@ -8,7 +8,7 @@ description: "Rclone Changelog"
 
 ## v1.71.1 - 2025-09-24
 
-[See commits](https://github.com/rclone/rclone/compare/v1.71.0...v1.71.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.71.0...v1.71.1)
 
 - Bug Fixes
   - bisync: Fix error handling for renamed conflicts (nielash)
@@ -33,7 +33,7 @@ description: "Rclone Changelog"
 
 ## v1.71.0 - 2025-08-22
 
-[See commits](https://github.com/rclone/rclone/compare/v1.70.0...v1.71.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.70.0...v1.71.0)
 
 - New S3 providers
   - [Exaba](/s3/#exaba) (Nick Craig-Wood)
@@ -138,7 +138,7 @@ description: "Rclone Changelog"
 
 ## v1.70.3 - 2025-07-09
 
-[See commits](https://github.com/rclone/rclone/compare/v1.70.2...v1.70.3)
+[See commits](https://github.com/takebox/rclone/compare/v1.70.2...v1.70.3)
 
 - Bug Fixes
   - check: Fix difference report (was reporting error counts) (albertony)
@@ -157,7 +157,7 @@ description: "Rclone Changelog"
 
 ## v1.70.2 - 2025-06-27
 
-[See commits](https://github.com/rclone/rclone/compare/v1.70.1...v1.70.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.70.1...v1.70.2)
 
 - Bug Fixes
   - convmv: Make --dry-run logs less noisy (nielash)
@@ -172,7 +172,7 @@ description: "Rclone Changelog"
 
 ## v1.70.1 - 2025-06-19
 
-[See commits](https://github.com/rclone/rclone/compare/v1.70.0...v1.70.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.70.0...v1.70.1)
 
 - Bug Fixes
   - convmv: Fix spurious "error running command echo" on Windows (Nick Craig-Wood)
@@ -180,7 +180,7 @@ description: "Rclone Changelog"
 
 ## v1.70.0 - 2025-06-17
 
-[See commits](https://github.com/rclone/rclone/compare/v1.69.0...v1.70.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.69.0...v1.70.0)
 
 - New backends
   - [DOI](/doi/) (Flora Thiebaut)
@@ -296,7 +296,7 @@ description: "Rclone Changelog"
 
 ## v1.69.3 - 2025-05-21
 
-[See commits](https://github.com/rclone/rclone/compare/v1.69.2...v1.69.3)
+[See commits](https://github.com/takebox/rclone/compare/v1.69.2...v1.69.3)
 
 - Bug Fixes
   - build: Reapply update github.com/golang-jwt/jwt/v5 from 5.2.1 to 5.2.2 to fix CVE-2025-30204 (dependabot[bot])
@@ -304,7 +304,7 @@ description: "Rclone Changelog"
 
 ## v1.69.2 - 2025-05-01
 
-[See commits](https://github.com/rclone/rclone/compare/v1.69.1...v1.69.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.69.1...v1.69.2)
 
 - Bug fixes
   - accounting: Fix percentDiff calculation -- (Anagh Kumar Baranwal)
@@ -348,7 +348,7 @@ description: "Rclone Changelog"
 
 ## v1.69.1 - 2025-02-14
 
-[See commits](https://github.com/rclone/rclone/compare/v1.69.0...v1.69.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.69.0...v1.69.1)
 
 - Bug Fixes
   - lib/oauthutil: Fix redirect URL mismatch errors (Nick Craig-Wood)
@@ -374,7 +374,7 @@ description: "Rclone Changelog"
 
 ## v1.69.0 - 2025-01-12
 
-[See commits](https://github.com/rclone/rclone/compare/v1.68.0...v1.69.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.68.0...v1.69.0)
 
 - New backends
   - [ICloud Drive](/iclouddrive/) (lostb1t)
@@ -507,12 +507,12 @@ description: "Rclone Changelog"
 
 ## v1.68.2 - 2024-11-15
 
-[See commits](https://github.com/rclone/rclone/compare/v1.68.1...v1.68.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.68.1...v1.68.2)
 
 - Security fixes
   - local backend: CVE-2024-52522: fix permission and ownership on symlinks with `--links` and `--metadata` (Nick Craig-Wood)
     - Only affects users using `--metadata` and `--links` and copying files to the local backend
-    - See <https://github.com/rclone/rclone/security/advisories/GHSA-hrxh-9w67-g4cv>
+    - See <https://github.com/takebox/rclone/security/advisories/GHSA-hrxh-9w67-g4cv>
   - build: bump github.com/golang-jwt/jwt/v4 from 4.5.0 to 4.5.1 (dependabot)
     - This is an issue in a dependency which is used for JWT certificates
     - See <https://github.com/golang-jwt/jwt/security/advisories/GHSA-29wx-vh33-7x7r>
@@ -537,7 +537,7 @@ description: "Rclone Changelog"
 
 ## v1.68.1 - 2024-09-24
 
-[See commits](https://github.com/rclone/rclone/compare/v1.68.0...v1.68.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.68.0...v1.68.1)
 
 - Bug Fixes
   - build: Fix docker release build (ttionya)
@@ -556,7 +556,7 @@ description: "Rclone Changelog"
 
 ## v1.68.0 - 2024-09-08
 
-[See commits](https://github.com/rclone/rclone/compare/v1.67.0...v1.68.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.67.0...v1.68.0)
 
 - New backends
   - [Files.com](/filescom) (Sam Harrison)
@@ -565,7 +565,7 @@ description: "Rclone Changelog"
 - Changed backends
   - [S3](/s3/) backend updated to use [AWS SDKv2](https://github.com/aws/aws-sdk-go-v2) as v1 is now unsupported.
     - The matrix of providers and auth methods is huge and there could be problems with obscure combinations.
-    - Please report problems in a [new issue](https://github.com/rclone/rclone/issues/new/choose) on Github.
+    - Please report problems in a [new issue](https://github.com/takebox/rclone/issues/new/choose) on Github.
 - New commands
   - [config encryption](/commands/rclone_config_encryption/): set, remove and check to manage config file encryption (Nick Craig-Wood)
 - New Features
@@ -678,7 +678,7 @@ description: "Rclone Changelog"
 
 ## v1.67.0 - 2024-06-14
 
-[See commits](https://github.com/rclone/rclone/compare/v1.66.0...v1.67.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.66.0...v1.67.0)
 
 - New backends
   - [uloz.to](/ulozto/) (iotmaestro)
@@ -831,7 +831,7 @@ description: "Rclone Changelog"
 
 ## v1.66.0 - 2024-03-10
 
-[See commits](https://github.com/rclone/rclone/compare/v1.65.0...v1.66.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.65.0...v1.66.0)
 
 - Major features
   - Rclone will now sync directory modification times if the backend supports it.
@@ -1001,7 +1001,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.65.2 - 2024-01-24
 
-[See commits](https://github.com/rclone/rclone/compare/v1.65.1...v1.65.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.65.1...v1.65.2)
 
 - Bug Fixes
   - build: bump github.com/cloudflare/circl from 1.3.6 to 1.3.7 (dependabot)
@@ -1009,11 +1009,11 @@ instead of of `--size-only`, when `check` is not available.
 - VFS
   - Fix stale data when using `--vfs-cache-mode` full (Nick Craig-Wood)
 - Azure Blob
-  - **IMPORTANT** Fix data corruption bug - see [#7590](https://github.com/rclone/rclone/issues/7590) (Nick Craig-Wood)
+  - **IMPORTANT** Fix data corruption bug - see [#7590](https://github.com/takebox/rclone/issues/7590) (Nick Craig-Wood)
 
 ## v1.65.1 - 2024-01-08
 
-[See commits](https://github.com/rclone/rclone/compare/v1.65.0...v1.65.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.65.0...v1.65.1)
 
 - Bug Fixes
   - build
@@ -1063,7 +1063,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.65.0 - 2023-11-26
 
-[See commits](https://github.com/rclone/rclone/compare/v1.64.0...v1.65.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.64.0...v1.65.0)
 
 - New backends
   - Azure Files (karan, moongdal, Nick Craig-Wood)
@@ -1165,7 +1165,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.64.2 - 2023-10-19
 
-[See commits](https://github.com/rclone/rclone/compare/v1.64.1...v1.64.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.64.1...v1.64.2)
 
 - Bug Fixes
   - selfupdate: Fix "invalid hashsum signature" error (Nick Craig-Wood)
@@ -1173,7 +1173,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.64.1 - 2023-10-17
 
-[See commits](https://github.com/rclone/rclone/compare/v1.64.0...v1.64.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.64.0...v1.64.1)
 
 - Bug Fixes
   - cmd: Make `--progress` output logs in the same format as without (Nick Craig-Wood)
@@ -1210,7 +1210,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.64.0 - 2023-09-11
 
-[See commits](https://github.com/rclone/rclone/compare/v1.63.0...v1.64.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.63.0...v1.64.0)
 
 - New backends
   - [Proton Drive](/protondrive/) (Chun-Hung Tseng)
@@ -1344,7 +1344,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.63.1 - 2023-07-17
 
-[See commits](https://github.com/rclone/rclone/compare/v1.63.0...v1.63.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.63.0...v1.63.1)
 
 - Bug Fixes
   - build: Fix macos builds for versions < 12 (Anagh Kumar Baranwal)
@@ -1365,7 +1365,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.63.0 - 2023-06-30
 
-[See commits](https://github.com/rclone/rclone/compare/v1.62.0...v1.63.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.62.0...v1.63.0)
 
 - New backends
   - [Pikpak](/pikpak/) (wiserain)
@@ -1536,7 +1536,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.62.2 - 2023-03-16
 
-[See commits](https://github.com/rclone/rclone/compare/v1.62.1...v1.62.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.62.1...v1.62.2)
 
 - Bug Fixes
   - docker volume plugin: Add missing fuse3 dependency (Nick Craig-Wood)
@@ -1546,7 +1546,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.62.1 - 2023-03-15
 
-[See commits](https://github.com/rclone/rclone/compare/v1.62.0...v1.62.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.62.0...v1.62.1)
 
 - Bug Fixes
   - docker: Add missing fuse3 dependency (cycneuramus)
@@ -1555,7 +1555,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.62.0 - 2023-03-14
 
-[See commits](https://github.com/rclone/rclone/compare/v1.61.0...v1.62.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.61.0...v1.62.0)
 
 - New Features
   - accounting: Make checkers show what they are doing (Nick Craig-Wood)
@@ -1659,7 +1659,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.61.1 - 2022-12-23
 
-[See commits](https://github.com/rclone/rclone/compare/v1.61.0...v1.61.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.61.0...v1.61.1)
 
 - Bug Fixes
   - docs:
@@ -1680,7 +1680,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.61.0 - 2022-12-20
 
-[See commits](https://github.com/rclone/rclone/compare/v1.60.0...v1.61.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.60.0...v1.61.0)
 
 - New backends
   - New S3 providers
@@ -1775,7 +1775,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.60.1 - 2022-11-17
 
-[See commits](https://github.com/rclone/rclone/compare/v1.60.0...v1.60.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.60.0...v1.60.1)
 
 - Bug Fixes
   - lib/cache: Fix alias backend shutting down too soon (Nick Craig-Wood)
@@ -1809,7 +1809,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.60.0 - 2022-10-21
 
-[See commits](https://github.com/rclone/rclone/compare/v1.59.0...v1.60.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.59.0...v1.60.0)
 
 - New backends
   - [Oracle object storage](/oracleobjectstorage/) (Manoj Ghosh)
@@ -1885,7 +1885,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.59.2 - 2022-09-15
 
-[See commits](https://github.com/rclone/rclone/compare/v1.59.1...v1.59.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.59.1...v1.59.2)
 
 - Bug Fixes
   - config: Move locking to fix fatal error: concurrent map read and map write (Nick Craig-Wood)
@@ -1900,7 +1900,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.59.1 - 2022-08-08
 
-[See commits](https://github.com/rclone/rclone/compare/v1.59.0...v1.59.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.59.0...v1.59.1)
 
 - Bug Fixes
   - accounting: Fix panic in core/stats-reset with unknown group (Nick Craig-Wood)
@@ -1937,7 +1937,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.59.0 - 2022-07-09
 
-[See commits](https://github.com/rclone/rclone/compare/v1.58.0...v1.59.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.58.0...v1.59.0)
 
 - New backends
   - [Combine](/combine) multiple remotes in one directory tree (Nick Craig-Wood)
@@ -1998,7 +1998,7 @@ instead of of `--size-only`, when `check` is not available.
   - Fix fs cache unpin (Martin Czygan)
   - Set proper exit code for errors that are not low-level retried (e.g. size/timestamp changing) (albertony)
 - Mount
-  - Support `windows/arm64` (may still be problems - see [#5828](https://github.com/rclone/rclone/issues/5828)) (Nick Craig-Wood)
+  - Support `windows/arm64` (may still be problems - see [#5828](https://github.com/takebox/rclone/issues/5828)) (Nick Craig-Wood)
   - Log IO errors at ERROR level (Nick Craig-Wood)
   - Ignore `_netdev` mount argument (Hugal31)
 - VFS
@@ -2096,7 +2096,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.58.1 - 2022-04-29
 
-[See commits](https://github.com/rclone/rclone/compare/v1.58.0...v1.58.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.58.0...v1.58.1)
 
 - Bug Fixes
   - build: Update github.com/billziss-gh to github.com/winfsp (Nick Craig-Wood)
@@ -2138,7 +2138,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.58.0 - 2022-03-18
 
-[See commits](https://github.com/rclone/rclone/compare/v1.57.0...v1.58.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.57.0...v1.58.0)
 
 - New backends
   - [Akamai Netstorage](/netstorage) (Nil Alexandrov)
@@ -2166,7 +2166,7 @@ instead of of `--size-only`, when `check` is not available.
 - Bug Fixes
   - build
     - Fix ARM architecture version in .deb packages after nfpm change (Nick Craig-Wood)
-    - Hard fork `github.com/jlaffaye/ftp` to fix `go get github.com/rclone/rclone` (Nick Craig-Wood)
+    - Hard fork `github.com/jlaffaye/ftp` to fix `go get github.com/takebox/rclone` (Nick Craig-Wood)
   - oauthutil: Fix crash when webbrowser requests `/robots.txt` (Nick Craig-Wood)
   - operations: Fix goroutine leak in case of copy retry (Ankur Gupta)
   - rc:
@@ -2270,7 +2270,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.57.0 - 2021-11-01
 
-[See commits](https://github.com/rclone/rclone/compare/v1.56.0...v1.57.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.56.0...v1.57.0)
 
 - New backends
   - Sia: for Sia decentralized cloud (Ian Levesque, Matthew Sevey, Ivan Andreev)
@@ -2396,7 +2396,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.56.2 - 2021-10-01
 
-[See commits](https://github.com/rclone/rclone/compare/v1.56.1...v1.56.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.56.1...v1.56.2)
 
 - Bug Fixes
   - serve http: Re-add missing auth to http service (Nolan Woods)
@@ -2406,7 +2406,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.56.1 - 2021-09-19
 
-[See commits](https://github.com/rclone/rclone/compare/v1.56.0...v1.56.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.56.0...v1.56.1)
 
 - Bug Fixes
   - accounting: Fix maximum bwlimit by scaling scale max token bucket size (Nick Craig-Wood)
@@ -2443,7 +2443,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.56.0 - 2021-07-20
 
-[See commits](https://github.com/rclone/rclone/compare/v1.55.0...v1.56.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.55.0...v1.56.0)
 
 - New backends
   - [Uptobox](/uptobox/) (buengese)
@@ -2586,7 +2586,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.55.1 - 2021-04-26
 
-[See commits](https://github.com/rclone/rclone/compare/v1.55.0...v1.55.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.55.0...v1.55.1)
 
 - Bug Fixes
   - selfupdate
@@ -2624,7 +2624,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.55.0 - 2021-03-31
 
-[See commits](https://github.com/rclone/rclone/compare/v1.54.0...v1.55.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.54.0...v1.55.0)
 
 - New commands
   - [selfupdate](/commands/rclone_selfupdate/) (Ivan Andreev)
@@ -2778,7 +2778,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.54.1 - 2021-03-08
 
-[See commits](https://github.com/rclone/rclone/compare/v1.54.0...v1.54.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.54.0...v1.54.1)
 
 - Bug Fixes
   - accounting: Fix --bwlimit when up or down is off (Nick Craig-Wood)
@@ -2815,7 +2815,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.54.0 - 2021-02-02
 
-[See commits](https://github.com/rclone/rclone/compare/v1.53.0...v1.54.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.53.0...v1.54.0)
 
 - New backends
   - Compression remote (experimental) (buengese)
@@ -3022,7 +3022,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.53.4 - 2021-01-20
 
-[See commits](https://github.com/rclone/rclone/compare/v1.53.3...v1.53.4)
+[See commits](https://github.com/takebox/rclone/compare/v1.53.3...v1.53.4)
 
 - Bug Fixes
   - accounting: Fix data race in Transferred() (Maciej Zimnoch)
@@ -3066,12 +3066,12 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.53.3 - 2020-11-19
 
-[See commits](https://github.com/rclone/rclone/compare/v1.53.2...v1.53.3)
+[See commits](https://github.com/takebox/rclone/compare/v1.53.2...v1.53.3)
 
 - Bug Fixes
   - random: Fix incorrect use of math/rand instead of crypto/rand CVE-2020-28924 (Nick Craig-Wood)
     - Passwords you have generated with `rclone config` may be insecure
-    - See [issue #4783](https://github.com/rclone/rclone/issues/4783) for more details and a checking tool
+    - See [issue #4783](https://github.com/takebox/rclone/issues/4783) for more details and a checking tool
   - random: Seed math/rand in one place with crypto strong seed (Nick Craig-Wood)
 - VFS
   - Fix vfs/refresh calls with fs= parameter (Nick Craig-Wood)
@@ -3080,7 +3080,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.53.2 - 2020-10-26
 
-[See commits](https://github.com/rclone/rclone/compare/v1.53.1...v1.53.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.53.1...v1.53.2)
 
 - Bug Fixes
   - accounting
@@ -3130,7 +3130,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.53.1 - 2020-09-13
 
-[See commits](https://github.com/rclone/rclone/compare/v1.53.0...v1.53.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.53.0...v1.53.1)
 
 - Bug Fixes
   - accounting: Remove new line from end of --stats-one-line display (Nick Craig-Wood)
@@ -3160,7 +3160,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.53.0 - 2020-09-02
 
-[See commits](https://github.com/rclone/rclone/compare/v1.52.0...v1.53.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.52.0...v1.53.0)
 
 - New Features
   - The [VFS layer](/commands/rclone_mount/#vfs-virtual-file-system) was heavily reworked for this release - see below for more details
@@ -3337,7 +3337,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.52.3 - 2020-08-07
 
-[See commits](https://github.com/rclone/rclone/compare/v1.52.2...v1.52.3)
+[See commits](https://github.com/takebox/rclone/compare/v1.52.2...v1.52.3)
 
 - Bug Fixes
   - docs
@@ -3367,7 +3367,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.52.2 - 2020-06-24
 
-[See commits](https://github.com/rclone/rclone/compare/v1.52.1...v1.52.2)
+[See commits](https://github.com/takebox/rclone/compare/v1.52.1...v1.52.2)
 
 - Bug Fixes
   - build
@@ -3394,7 +3394,7 @@ instead of of `--size-only`, when `check` is not available.
 
 ## v1.52.1 - 2020-06-10
 
-[See commits](https://github.com/rclone/rclone/compare/v1.52.0...v1.52.1)
+[See commits](https://github.com/takebox/rclone/compare/v1.52.0...v1.52.1)
 
 - Bug Fixes
   - lib/file: Fix SetSparse on Windows 7 which fixes downloads of files > 250MB (Nick Craig-Wood)
@@ -3430,7 +3430,7 @@ instead of of `--size-only`, when `check` is not available.
 Special thanks to Martin Michlmayr for proof reading and correcting
 all the docs and Edward Barker for helping re-write the front page.
 
-[See commits](https://github.com/rclone/rclone/compare/v1.51.0...v1.52.0)
+[See commits](https://github.com/takebox/rclone/compare/v1.51.0...v1.52.0)
 
 - New backends
   - [Tardigrade](/tardigrade/) backend for use with storj.io (Caleb Case)
@@ -3852,7 +3852,7 @@ all the docs and Edward Barker for helping re-write the front page.
     - Convert python scripts to python3 (Nick Craig-Wood)
     - Swap Azure/go-ansiterm for mattn/go-colorable (Nick Craig-Wood)
     - Dockerfile fixes (Matei David)
-    - Add [plugin support](https://github.com/rclone/rclone/blob/master/CONTRIBUTING.md#writing-a-plugin) for backends and commands (Richard Patel)
+    - Add [plugin support](https://github.com/takebox/rclone/blob/master/CONTRIBUTING.md#writing-a-plugin) for backends and commands (Richard Patel)
   - config
     - Use alternating Red/Green in config to make more obvious (Nick Craig-Wood)
   - contrib

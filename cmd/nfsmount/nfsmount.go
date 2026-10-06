@@ -13,16 +13,15 @@ import (
 	"os/exec"
 	"runtime"
 
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/cmd/serve/nfs"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/vfs"
+	"github.com/takebox/rclone/cmd/mountlib"
+	"github.com/takebox/rclone/cmd/serve/nfs"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/vfs"
 )
 
 var (
-	sudo = false
-)
+	sudo = false )
 
 func init() {
 	name := "nfsmount"

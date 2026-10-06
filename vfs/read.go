@@ -10,10 +10,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/chunkedreader"
-	"github.com/rclone/rclone/fs/hash"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/chunkedreader"
+	"github.com/takebox/rclone/fs/hash"
 )
 
 // ReadFileHandle is an open for read file handle on a File
@@ -225,8 +225,7 @@ func waitSequential(what string, remote string, cond *sync.Cond, maxWait time.Du
 	var (
 		timeout = time.NewTimer(maxWait)
 		done    = make(chan struct{})
-		abort   atomic.Int32
-	)
+		abort   atomic.Int32 )
 	go func() {
 		select {
 		case <-timeout.C:

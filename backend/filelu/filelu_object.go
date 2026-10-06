@@ -14,8 +14,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/hash"
 )
 
 // Object describes a FileLu object

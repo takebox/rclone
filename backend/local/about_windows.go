@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 	"golang.org/x/sys/windows"
 )
 
@@ -24,8 +24,7 @@ func (f *Fs) About(ctx context.Context) (*fs.Usage, error) {
 		uintptr(unsafe.Pointer(root)),
 		uintptr(unsafe.Pointer(&available)), // lpFreeBytesAvailable - for this user
 		uintptr(unsafe.Pointer(&total)),     // lpTotalNumberOfBytes
-		uintptr(unsafe.Pointer(&free)),      // lpTotalNumberOfFreeBytes
-	)
+		uintptr(unsafe.Pointer(&free)),      // lpTotalNumberOfFreeBytes )
 	if e1 != windows.Errno(0) {
 		return nil, fmt.Errorf("failed to read disk usage: %w", e1)
 	}

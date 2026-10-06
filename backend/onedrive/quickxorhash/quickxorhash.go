@@ -38,8 +38,7 @@ const (
 	Size        = 20
 	shift       = 11
 	widthInBits = 8 * Size
-	dataSize    = shift * widthInBits
-)
+	dataSize    = shift * widthInBits )
 
 type quickXorHash struct {
 	data [dataSize]byte

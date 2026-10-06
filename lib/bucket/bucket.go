@@ -98,8 +98,7 @@ type (
 	ExistsFn func() (found bool, err error)
 
 	// CreateFn should be passed to Create to make a bucket
-	CreateFn func() error
-)
+	CreateFn func() error )
 
 // Create the bucket with create() if it doesn't exist
 //

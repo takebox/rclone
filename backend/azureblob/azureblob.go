@@ -35,23 +35,23 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/storage/azblob/container"
 	"github.com/Azure/azure-sdk-for-go/sdk/storage/azblob/sas"
 	"github.com/Azure/azure-sdk-for-go/sdk/storage/azblob/service"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/chunksize"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/list"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/bucket"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/env"
-	"github.com/rclone/rclone/lib/multipart"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/pool"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/chunksize"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/list"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/bucket"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/env"
+	"github.com/takebox/rclone/lib/multipart"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/pool"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -73,8 +73,7 @@ const (
 	emulatorAccount      = "devstoreaccount1"
 	emulatorAccountKey   = "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=="
 	emulatorBlobEndpoint = "http://127.0.0.1:10000/devstoreaccount1"
-	sasCopyValidity      = time.Hour // how long SAS should last when doing server side copy
-)
+	sasCopyValidity      = time.Hour // how long SAS should last when doing server side copy )
 
 var (
 	errCantUpdateArchiveTierBlobs = fserrors.NoRetryError(errors.New("can't update archive tier blob without --azureblob-archive-tier-delete"))
@@ -83,8 +82,7 @@ var (
 	//
 	// It acts as global metadata lock so we don't bloat Object
 	// with an extra lock that will only very rarely be contended.
-	metadataMu sync.Mutex
-)
+	metadataMu sync.Mutex )
 
 // Register with Fs
 func init() {
@@ -2796,8 +2794,7 @@ func (o *Object) clearUncommittedBlocks(ctx context.Context) (err error) {
 		blockIDs     []string
 		blockList    blockblob.GetBlockListResponse
 		properties   *blob.GetPropertiesResponse
-		options      *blockblob.CommitBlockListOptions
-	)
+		options      *blockblob.CommitBlockListOptions )
 
 	properties, err = o.readMetaDataAlways(ctx)
 	if err == fs.ErrorObjectNotFound {

@@ -8,7 +8,7 @@ import (
 	"sync/atomic"
 	"syscall"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 	"golang.org/x/sys/unix"
 )
 
@@ -18,8 +18,7 @@ var (
 		unix.FALLOC_FL_KEEP_SIZE | unix.FALLOC_FL_PUNCH_HOLE, // for ZFS #3066
 	}
 	fallocFlagsIndex atomic.Int32
-	preAllocateMu    sync.Mutex
-)
+	preAllocateMu    sync.Mutex )
 
 // PreallocateImplemented is a constant indicating whether the
 // implementation of Preallocate actually does anything.

@@ -18,8 +18,7 @@ func TestStringLock(t *testing.T) {
 	const (
 		outer = 10
 		inner = 100
-		total = outer * inner
-	)
+		total = outer * inner )
 	for range outer {
 		for j := range counter {
 			wg.Add(1)

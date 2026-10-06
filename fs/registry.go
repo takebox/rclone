@@ -13,9 +13,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/lib/errcount"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/lib/errcount"
 )
 
 // Registry of filesystems
@@ -173,8 +173,7 @@ type OptionVisibility byte
 const (
 	OptionHideCommandLine OptionVisibility = 1 << iota
 	OptionHideConfigurator
-	OptionHideBoth = OptionHideCommandLine | OptionHideConfigurator
-)
+	OptionHideBoth = OptionHideCommandLine | OptionHideConfigurator )
 
 // Option is describes an option for the config wizard
 //

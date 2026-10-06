@@ -4,8 +4,8 @@ package internetarchive_test
 import (
 	"testing"
 
-	"github.com/rclone/rclone/backend/internetarchive"
-	"github.com/rclone/rclone/fstest/fstests"
+	"github.com/takebox/rclone/backend/internetarchive"
+	"github.com/takebox/rclone/fstest/fstests"
 )
 
 // TestIntegration runs integration tests against the remote

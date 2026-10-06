@@ -12,7 +12,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 // uploadFile uploads a file to FileLu

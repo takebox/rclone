@@ -8,13 +8,12 @@ import (
 	"syscall"
 
 	"github.com/pkg/xattr"
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 const (
 	xattrPrefix    = "user." // FIXME is this correct for all unixes?
-	xattrSupported = xattr.XATTR_SUPPORTED
-)
+	xattrSupported = xattr.XATTR_SUPPORTED )
 
 // Check to see if the error supplied is a not supported error, and if
 // so, disable xattrs

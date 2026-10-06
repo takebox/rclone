@@ -12,14 +12,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/dirtree"
-	"github.com/rclone/rclone/fs/list"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/fs/object"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/dirtree"
+	"github.com/takebox/rclone/fs/list"
+	"github.com/takebox/rclone/fs/log"
+	"github.com/takebox/rclone/fs/object"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fs/walk"
+	"github.com/takebox/rclone/vfs/vfscommon"
 	"golang.org/x/text/unicode/norm"
 )
 
@@ -54,8 +54,7 @@ const (
 	vOK      vState = iota // Not virtual
 	vAddFile               // added file
 	vAddDir                // added directory
-	vDel                   // removed file or directory
-)
+	vDel                   // removed file or directory )
 
 func newDir(vfs *VFS, f fs.Fs, parent *Dir, fsDir fs.Directory) *Dir {
 	d := &Dir{

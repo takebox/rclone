@@ -16,8 +16,7 @@ var (
 	ntdll                        = windows.NewLazySystemDLL("ntdll.dll")
 	ntQueryVolumeInformationFile = ntdll.NewProc("NtQueryVolumeInformationFile")
 	ntSetInformationFile         = ntdll.NewProc("NtSetInformationFile")
-	preAllocateMu                sync.Mutex
-)
+	preAllocateMu                sync.Mutex )
 
 type fileAllocationInformation struct {
 	AllocationSize uint64
@@ -50,8 +49,7 @@ func PreAllocate(size int64, out *os.File) error {
 	var (
 		iosb       ioStatusBlock
 		fsSizeInfo fileFsSizeInformation
-		allocInfo  fileAllocationInformation
-	)
+		allocInfo  fileAllocationInformation )
 
 	// Query info about the block sizes on the file system
 	_, _, e1 := ntQueryVolumeInformationFile.Call(
@@ -59,8 +57,7 @@ func PreAllocate(size int64, out *os.File) error {
 		uintptr(unsafe.Pointer(&iosb)),
 		uintptr(unsafe.Pointer(&fsSizeInfo)),
 		unsafe.Sizeof(fsSizeInfo),
-		uintptr(3), // FileFsSizeInformation
-	)
+		uintptr(3), // FileFsSizeInformation )
 	if e1 != nil && e1 != syscall.Errno(0) {
 		return fmt.Errorf("preAllocate NtQueryVolumeInformationFile failed: %w", e1)
 	}
@@ -78,8 +75,7 @@ func PreAllocate(size int64, out *os.File) error {
 		uintptr(unsafe.Pointer(&iosb)),
 		uintptr(unsafe.Pointer(&allocInfo)),
 		unsafe.Sizeof(allocInfo),
-		uintptr(19), // FileAllocationInformation
-	)
+		uintptr(19), // FileAllocationInformation )
 	if e1 != nil && e1 != syscall.Errno(0) {
 		if e1 == windows.ERROR_DISK_FULL || e1 == windows.ERROR_HANDLE_DISK_FULL {
 			return ErrDiskFull

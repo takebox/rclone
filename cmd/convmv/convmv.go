@@ -6,19 +6,18 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fs/sync"
-	"github.com/rclone/rclone/lib/transform"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fs/sync"
+	"github.com/takebox/rclone/lib/transform"
 	"github.com/spf13/cobra"
 )
 
 // Globals
 var (
 	deleteEmptySrcDirs = false
-	createEmptySrcDirs = false
-)
+	createEmptySrcDirs = false )
 
 func init() {
 	cmd.Root.AddCommand(commandDefinition)

@@ -9,9 +9,9 @@ import (
 
 	"bazil.org/fuse"
 	fusefs "bazil.org/fuse/fs"
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/vfs"
+	"github.com/takebox/rclone/cmd/mountlib"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/vfs"
 )
 
 func init() {

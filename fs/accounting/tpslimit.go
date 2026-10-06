@@ -3,13 +3,12 @@ package accounting
 import (
 	"context"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 	"golang.org/x/time/rate"
 )
 
 var (
-	tpsBucket *rate.Limiter // for limiting number of http transactions per second
-)
+	tpsBucket *rate.Limiter // for limiting number of http transactions per second )
 
 // StartLimitTPS starts the token bucket for transactions per second
 // limiting if necessary

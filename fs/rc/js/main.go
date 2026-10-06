@@ -16,23 +16,22 @@ import (
 	"runtime"
 	"syscall/js"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/rc"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/rc"
 
 	// Core functionality we need
-	_ "github.com/rclone/rclone/fs/operations"
-	_ "github.com/rclone/rclone/fs/sync"
+	_ "github.com/takebox/rclone/fs/operations"
+	_ "github.com/takebox/rclone/fs/sync"
 
-	//	_ "github.com/rclone/rclone/backend/all" // import all backends
+	//	_ "github.com/takebox/rclone/backend/all" // import all backends
 
 	// Backends
-	_ "github.com/rclone/rclone/backend/memory"
+	_ "github.com/takebox/rclone/backend/memory"
 )
 
 var (
 	document js.Value
-	jsJSON   js.Value
-)
+	jsJSON   js.Value )
 
 func getElementById(name string) js.Value {
 	node := document.Call("getElementById", name)

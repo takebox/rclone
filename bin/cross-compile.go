@@ -258,7 +258,7 @@ func compileArch(version, goos, goarch, dir string) bool {
 	}
 	args := []string{
 		"go", "build",
-		"--ldflags", "-s -X github.com/rclone/rclone/fs.Version=" + version,
+		"--ldflags", "-s -X github.com/takebox/rclone/fs.Version=" + version,
 		"-trimpath",
 		"-o", output,
 		"-tags", *tags,
@@ -280,8 +280,7 @@ func compileArch(version, goos, goarch, dir string) bool {
 	}
 	var (
 		cgoCFlags  []string
-		cgoLdFlags []string
-	)
+		cgoLdFlags []string )
 	if *macOSSDK != "" {
 		flag := "-isysroot " + runOut("xcrun", "--sdk", *macOSSDK, "--show-sdk-path")
 		cgoCFlags = append(cgoCFlags, flag)

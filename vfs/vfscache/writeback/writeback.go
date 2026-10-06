@@ -11,13 +11,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/vfs/vfscommon"
 )
 
 const (
-	maxUploadDelay = 5 * time.Minute // max delay between upload attempts
-)
+	maxUploadDelay = 5 * time.Minute // max delay between upload attempts )
 
 // PutFn is the interface that item provides to store the data
 type PutFn func(context.Context) error

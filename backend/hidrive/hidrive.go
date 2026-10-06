@@ -17,20 +17,20 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/rclone/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/encoder"
 
-	"github.com/rclone/rclone/backend/hidrive/api"
-	"github.com/rclone/rclone/backend/hidrive/hidrivehash"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/oauthutil"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/hidrive/api"
+	"github.com/takebox/rclone/backend/hidrive/hidrivehash"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/oauthutil"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 const (
@@ -41,8 +41,7 @@ const (
 	decayConstant               = 2 // bigger for slower decay, exponential
 	defaultUploadChunkSize      = 48 * fs.Mebi
 	defaultUploadCutoff         = 2 * defaultUploadChunkSize
-	defaultUploadConcurrency    = 4
-)
+	defaultUploadConcurrency    = 4 )
 
 // Globals
 var (
@@ -55,8 +54,7 @@ var (
 		RedirectURL:  oauthutil.TitleBarRedirectURL,
 	}
 	// hidrivehashType is the hash.Type for HiDrive hashes.
-	hidrivehashType hash.Type
-)
+	hidrivehashType hash.Type )
 
 // Register the backend with Fs.
 func init() {

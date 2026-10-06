@@ -5,15 +5,14 @@ import (
 	"context"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/operations"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/operations"
 	"github.com/spf13/cobra"
 )
 
 var (
-	rmdirs = false
-)
+	rmdirs = false )
 
 func init() {
 	cmd.Root.AddCommand(commandDefinition)

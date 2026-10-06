@@ -20,8 +20,7 @@ const (
 	EBADF
 	EROFS
 	ENOSYS
-	ELOOP
-)
+	ELOOP )
 
 // Errors which have exact counterparts in os
 var (
@@ -29,8 +28,7 @@ var (
 	EEXIST  = os.ErrExist
 	EPERM   = os.ErrPermission
 	EINVAL  = os.ErrInvalid
-	ECLOSED = os.ErrClosed
-)
+	ECLOSED = os.ErrClosed )
 
 var errorNames = []string{
 	OK:        "Success",

@@ -12,15 +12,15 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/march"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/errcount"
-	"github.com/rclone/rclone/lib/transform"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/march"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/errcount"
+	"github.com/takebox/rclone/lib/transform"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -113,8 +113,7 @@ type trackRenamesStrategy byte
 const (
 	trackRenamesStrategyHash trackRenamesStrategy = 1 << iota
 	trackRenamesStrategyModtime
-	trackRenamesStrategyLeaf
-)
+	trackRenamesStrategyLeaf )
 
 func (strategy trackRenamesStrategy) hash() bool {
 	return (strategy & trackRenamesStrategyHash) != 0

@@ -15,9 +15,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/lib/atexit"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/lib/atexit"
 )
 
 // Options for configuring the batcher
@@ -154,8 +154,7 @@ func (b *Batcher[Item, Result]) commitBatch(ctx context.Context, requests []requ
 	// Report results to clients
 	var (
 		lastError  error
-		errorCount = 0
-	)
+		errorCount = 0 )
 	for i, req := range requests {
 		result := results[i]
 		err := errors[i]

@@ -15,9 +15,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/file"
-	"github.com/rclone/rclone/lib/random"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/lib/file"
+	"github.com/takebox/rclone/lib/random"
 )
 
 var (
@@ -26,8 +26,7 @@ var (
 	number     = flag.Int("n", 4, "Number of tests to run simultaneously")
 	iterations = flag.Int("i", 100, "Iterations of the test")
 	timeout    = flag.Duration("timeout", 10*time.Second, "Inactivity time to detect a deadlock")
-	testNumber atomic.Int32
-)
+	testNumber atomic.Int32 )
 
 // Test contains stats about the running test which work for files or
 // directories

@@ -27,8 +27,7 @@ const (
 	// the first rune of the SYMBOL FOR block for control characters
 	symbolOffset = '␀' // SYMBOL FOR NULL
 	// QuoteRune is the rune used for quoting reserved characters
-	QuoteRune = '‛' // SINGLE HIGH-REVERSED-9 QUOTATION MARK
-)
+	QuoteRune = '‛' // SINGLE HIGH-REVERSED-9 QUOTATION MARK )
 
 // NB keep the tests in fstests/fstests/fstests.go FsEncoding up to date with this
 // NB keep the aliases up to date below also

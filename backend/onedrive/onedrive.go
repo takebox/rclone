@@ -20,27 +20,27 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/backend/onedrive/api"
-	"github.com/rclone/rclone/backend/onedrive/quickxorhash"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/list"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/dircache"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/oauthutil"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/readers"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/onedrive/api"
+	"github.com/takebox/rclone/backend/onedrive/quickxorhash"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/list"
+	"github.com/takebox/rclone/fs/log"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fs/walk"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/dircache"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/oauthutil"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/readers"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 const (
@@ -105,8 +105,7 @@ var (
 	QuickXorHashType hash.Type
 
 	//go:embed metadata.md
-	metadataHelp string
-)
+	metadataHelp string )
 
 // Register with Fs
 func init() {
@@ -150,7 +149,7 @@ causes rclone to use twice the storage on Onedrive business as when
 rclone sets the modification time after the upload Onedrive creates a
 new version.
 
-See: https://github.com/rclone/rclone/issues/1716
+See: https://github.com/takebox/rclone/issues/1716
 `,
 			Default:  fs.SizeSuffix(-1),
 			Advanced: true,
@@ -1122,7 +1121,7 @@ func NewFs(ctx context.Context, name, root string, m configmap.Mapper) (fs.Fs, e
 	}
 
 	// Disable change polling in China region
-	// See: https://github.com/rclone/rclone/issues/6444
+	// See: https://github.com/takebox/rclone/issues/6444
 	if f.opt.Region == regionCN {
 		f.features.ChangeNotify = nil
 	}
@@ -1177,7 +1176,7 @@ func NewFs(ctx context.Context, name, root string, m configmap.Mapper) (fs.Fs, e
 		}
 		// XXX: update the old f here instead of returning tempF, since
 		// `features` were already filled with functions having *f as a receiver.
-		// See https://github.com/rclone/rclone/issues/2182
+		// See https://github.com/takebox/rclone/issues/2182
 		f.dirCache = tempF.dirCache
 		f.root = tempF.root
 		// return an error with an fs which points to the parent

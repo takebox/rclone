@@ -9,11 +9,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/walk"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/walk"
 )
 
 // dedupeRename renames the objs slice to different names
@@ -191,8 +191,7 @@ const (
 	DeduplicateRename                             // rename the objects
 	DeduplicateLargest                            // choose the largest object
 	DeduplicateSmallest                           // choose the smallest object
-	DeduplicateList                               // list duplicates only
-)
+	DeduplicateList                               // list duplicates only )
 
 func (x DeduplicateMode) String() string {
 	switch x {

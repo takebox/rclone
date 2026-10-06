@@ -21,15 +21,15 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/fspath"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/encoder"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/fspath"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/encoder"
 )
 
 // Chunker's composite files have one or more chunks
@@ -104,8 +104,7 @@ var (
 // rather than serve as a generic metadata container.
 const (
 	maxMetadataSize        = 1023
-	maxMetadataSizeWritten = 255
-)
+	maxMetadataSizeWritten = 255 )
 
 // Current/highest supported metadata format.
 const metadataVersion = 2
@@ -137,8 +136,7 @@ var (
 const (
 	delNever  = 0 // don't delete, just move
 	delAlways = 1 // delete destination before moving
-	delFailed = 2 // move, then delete and try again if failed
-)
+	delFailed = 2 // move, then delete and try again if failed )
 
 // Register with Fs
 func init() {
@@ -897,8 +895,7 @@ func (f *Fs) scanObject(ctx context.Context, remote string, quickScan bool) (fs.
 		baseObj       fs.Object
 		currentXactID string
 		err           error
-		sameMain      bool
-	)
+		sameMain      bool )
 
 	if f.useMeta {
 		baseObj, err = f.base.NewObject(ctx, remote)
@@ -1865,8 +1862,7 @@ func (f *Fs) baseMove(ctx context.Context, src fs.Object, remote string, delMode
 	ci.NameTransform = nil // ensure operations.Move does not double-transform here
 	var (
 		dest fs.Object
-		err  error
-	)
+		err  error )
 	switch delMode {
 	case delAlways:
 		dest, err = f.base.NewObject(ctx, remote)

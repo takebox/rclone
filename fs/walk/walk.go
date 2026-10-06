@@ -11,11 +11,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/dirtree"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/list"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/dirtree"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/list"
 )
 
 // ErrorSkipDir is used as a return value from Walk to indicate that the
@@ -83,8 +83,7 @@ type ListType byte
 const (
 	ListObjects ListType                 = 1 << iota // list objects only
 	ListDirs                                         // list dirs only
-	ListAll     = ListObjects | ListDirs             // list files and dirs
-)
+	ListAll     = ListObjects | ListDirs             // list files and dirs )
 
 // Objects returns true if the list type specifies objects
 func (l ListType) Objects() bool {
@@ -369,8 +368,7 @@ func walk(ctx context.Context, f fs.Fs, path string, includeAll bool, maxLevel i
 		traversing sync.WaitGroup      // running directory traversals
 		doClose    sync.Once           // close the channel once
 		mu         sync.Mutex          // stop fn being called concurrently
-		ci         = fs.GetConfig(ctx) // current config
-	)
+		ci         = fs.GetConfig(ctx) // current config )
 	// listJob describe a directory listing that needs to be done
 	type listJob struct {
 		remote string

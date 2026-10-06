@@ -6,7 +6,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 	"golang.org/x/sys/unix"
 )
 
@@ -57,8 +57,7 @@ type offsetLength struct {
 
 const (
 	defaultAllowPages      = 32
-	defaultWorkerQueueSize = 64
-)
+	defaultWorkerQueueSize = 64 )
 
 func newFadvise(o *Object, fd int, offset int64) *fadvise {
 	f := &fadvise{

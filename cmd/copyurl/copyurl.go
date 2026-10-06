@@ -9,11 +9,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/errcount"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/errcount"
 	"github.com/spf13/cobra"
 	"golang.org/x/sync/errgroup"
 )
@@ -24,8 +24,7 @@ var (
 	printFilename  = false
 	stdout         = false
 	noClobber      = false
-	urls           = false
-)
+	urls           = false )
 
 func init() {
 	cmd.Root.AddCommand(commandDefinition)

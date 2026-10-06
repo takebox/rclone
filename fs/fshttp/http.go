@@ -18,10 +18,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/lib/structs"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/lib/structs"
 	"github.com/youmark/pkcs8"
 	"golang.org/x/net/publicsuffix"
 )

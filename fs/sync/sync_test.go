@@ -18,16 +18,16 @@ import (
 
 	mutex "sync" // renamed as "sync" already in use
 
-	_ "github.com/rclone/rclone/backend/all" // import all backends
-	"github.com/rclone/rclone/cmd/bisync/bilib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/lib/transform"
+	_ "github.com/takebox/rclone/backend/all" // import all backends
+	"github.com/takebox/rclone/cmd/bisync/bilib"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/lib/transform"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/text/unicode/norm"
@@ -2741,8 +2741,7 @@ func testSyncConcurrent(t *testing.T, subtest string) {
 	const (
 		NFILES     = 20
 		NCHECKERS  = 4
-		NTRANSFERS = 4
-	)
+		NTRANSFERS = 4 )
 
 	ctx, ci := fs.AddConfig(context.Background())
 	ci.Checkers = NCHECKERS

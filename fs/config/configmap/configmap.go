@@ -18,8 +18,7 @@ const (
 	PriorityNormal  Priority = iota
 	PriorityConfig           // use for reading from the config
 	PriorityDefault          // use for default values
-	PriorityMax
-)
+	PriorityMax )
 
 // Getter provides an interface to get config items
 type Getter interface {

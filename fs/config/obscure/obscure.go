@@ -11,7 +11,7 @@ import (
 	"io"
 	"math"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 // crypt internals
@@ -23,8 +23,7 @@ var (
 		0xf4, 0xde, 0x16, 0x2b, 0x8b, 0x95, 0xf6, 0x38,
 	}
 	cryptBlock cipher.Block
-	cryptRand  = rand.Reader
-)
+	cryptRand  = rand.Reader )
 
 // crypt transforms in to out using iv under AES-CTR.
 //

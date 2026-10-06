@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/rc"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/rc"
 	"golang.org/x/time/rate"
 )
 
@@ -23,8 +23,7 @@ const (
 	TokenBucketSlotAccounting TokenBucketSlot = iota
 	TokenBucketSlotTransportRx
 	TokenBucketSlotTransportTx
-	TokenBucketSlots
-)
+	TokenBucketSlots )
 
 type buckets [TokenBucketSlots]*rate.Limiter
 

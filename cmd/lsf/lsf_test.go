@@ -5,11 +5,11 @@ import (
 	"context"
 	"testing"
 
-	_ "github.com/rclone/rclone/backend/local"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/list"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fstest"
+	_ "github.com/takebox/rclone/backend/local"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/list"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fstest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -110,8 +110,7 @@ subdir
 	require.NoError(t, err)
 	assert.Equal(t, `d41d8cd98f00b204e9800998ecf8427e;file1
 409d6c19451dd39d4a94e42d2ff2c834;file2
-9b4c8a5e36d3be7e2c4b1d75ded8c8a1;file3
-;subdir
+9b4c8a5e36d3be7e2c4b1d75ded8c8a1;file3 ;subdir
 `, buf.String())
 
 	buf = new(bytes.Buffer)

@@ -17,10 +17,10 @@ import (
 
 	"github.com/go-chi/chi/v5"
 
-	_ "github.com/rclone/rclone/backend/local"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configfile"
-	"github.com/rclone/rclone/fs/rc"
+	_ "github.com/takebox/rclone/backend/local"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configfile"
+	"github.com/takebox/rclone/fs/rc"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -29,8 +29,7 @@ const (
 	testBindAddress     = "localhost:0"
 	defaultTestTemplate = "testdata/golden/testindex.html"
 	testFs              = "testdata/files"
-	remoteURL           = "[" + testFs + "]/" // initial URL path to fetch from that remote
-)
+	remoteURL           = "[" + testFs + "]/" // initial URL path to fetch from that remote )
 
 func TestMain(m *testing.M) {
 	// Pretend to be rclone version if we have a version string parameter

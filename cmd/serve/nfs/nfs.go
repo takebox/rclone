@@ -13,15 +13,15 @@ import (
 	"context"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/cmd/serve"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/vfs"
-	"github.com/rclone/rclone/vfs/vfscommon"
-	"github.com/rclone/rclone/vfs/vfsflags"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/cmd/serve"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/vfs"
+	"github.com/takebox/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/vfs/vfsflags"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 )
@@ -54,8 +54,7 @@ type handleCache = fs.Enum[handleCacheChoices]
 const (
 	cacheMemory handleCache = iota
 	cacheDisk
-	cacheSymlink
-)
+	cacheSymlink )
 
 type handleCacheChoices struct{}
 

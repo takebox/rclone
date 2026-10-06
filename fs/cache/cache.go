@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/lib/cache"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/lib/cache"
 )
 
 var (
@@ -18,8 +18,7 @@ var (
 	c              *cache.Cache
 	mu             sync.Mutex            // mutex to protect remap
 	remap          = map[string]string{} // map user supplied names to canonical names - [fsString]canonicalName
-	childParentMap = map[string]string{} // tracks a one-to-many relationship between parent dirs and their direct children files - [child]parent
-)
+	childParentMap = map[string]string{} // tracks a one-to-many relationship between parent dirs and their direct children files - [child]parent )
 
 // Create the cache just once
 func createOnFirstUse() {

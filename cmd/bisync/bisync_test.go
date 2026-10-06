@@ -23,31 +23,30 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/rclone/rclone/cmd/bisync"
-	"github.com/rclone/rclone/cmd/bisync/bilib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/fspath"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/object"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fs/sync"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/random"
-	"github.com/rclone/rclone/lib/terminal"
+	"github.com/takebox/rclone/cmd/bisync"
+	"github.com/takebox/rclone/cmd/bisync/bilib"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/fspath"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/object"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fs/sync"
+	"github.com/takebox/rclone/fs/walk"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/random"
+	"github.com/takebox/rclone/lib/terminal"
 	"golang.org/x/text/unicode/norm"
 
 	"github.com/pmezard/go-difflib/difflib"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	_ "github.com/rclone/rclone/backend/all" // for integration tests
-)
+	_ "github.com/takebox/rclone/backend/all" // for integration tests )
 
 const (
 	touchDateFormat = "2006-01-02"
@@ -67,8 +66,8 @@ var initDate = time.Date(2000, time.January, 1, 0, 0, 0, 0, bisync.TZ)
 // go test ./cmd/bisync -remote local -case extended_filenames
 // go run ./fstest/test_all -run '^TestBisync.*$' -timeout 3h -verbose -maxtries 5
 // go run ./fstest/test_all -remotes local,TestCrypt:,TestDrive:,TestOneDrive:,TestOneDriveBusiness:,TestDropbox:,TestCryptDrive:,TestOpenDrive:,TestChunker:,:memory:,TestCryptNoEncryption:,TestCombine:DirA,TestFTPRclone:,TestWebdavRclone:,TestS3Rclone:,TestSFTPRclone:,TestSFTPRcloneSSH:,TestNextcloud:,TestChunkerNometaLocal:,TestChunkerChunk3bLocal:,TestChunkerLocal:,TestChunkerChunk3bNometaLocal:,TestStorj: -run '^TestBisync.*$' -timeout 3h -verbose -maxtries 5
-// go test -timeout 3h -run '^TestBisync.*$' github.com/rclone/rclone/cmd/bisync -remote TestDrive:Bisync -v
-// go test -timeout 3h -run '^TestBisyncRemoteRemote/basic$' github.com/rclone/rclone/cmd/bisync -remote TestDropbox:Bisync -v
+// go test -timeout 3h -run '^TestBisync.*$' github.com/takebox/rclone/cmd/bisync -remote TestDrive:Bisync -v
+// go test -timeout 3h -run '^TestBisyncRemoteRemote/basic$' github.com/takebox/rclone/cmd/bisync -remote TestDropbox:Bisync -v
 // TestFTPProftpd:,TestFTPPureftpd:,TestFTPRclone:,TestFTPVsftpd:,TestHdfs:,TestS3Minio:,TestS3MinioEdge:,TestS3Rclone:,TestSeafile:,TestSeafileEncrypted:,TestSeafileV6:,TestSFTPOpenssh:,TestSFTPRclone:,TestSFTPRcloneSSH:,TestSia:,TestSwiftAIO:,TestWebdavNextcloud:,TestWebdavOwncloud:,TestWebdavRclone:
 
 // logReplacements make modern test logs comparable with golden dir.
@@ -177,8 +176,7 @@ var (
 	// "src and dst identical but can't set mod time without deleting and re-uploading"
 	argRefreshTimes = flag.Bool("refresh-times", false, "Force refreshing the target modtime, useful for Dropbox (default: false)")
 	ignoreLogs      = flag.Bool("ignore-logs", false, "skip comparing log lines but still compare listings")
-	argPCount       = flag.Int("pcount", 2, "number of parallel subtests to run for TestBisyncConcurrent") // go test ./cmd/bisync -race -pcount 10
-)
+	argPCount       = flag.Int("pcount", 2, "number of parallel subtests to run for TestBisyncConcurrent") // go test ./cmd/bisync -race -pcount 10 )
 
 // bisyncTest keeps all test data in a single place
 type bisyncTest struct {
@@ -981,17 +979,17 @@ func (b *bisyncTest) checkPreReqs(ctx context.Context, opt *bisync.Options) (con
 		fs.GetConfig(ctx).RefreshTimes = true // https://rclone.org/bisync/#notes-about-testing
 	}
 	if strings.HasPrefix(b.fs1.String(), "Dropbox") {
-		b.fs1.Features().Disable("Copy") // https://github.com/rclone/rclone/issues/6199#issuecomment-1570366202
+		b.fs1.Features().Disable("Copy") // https://github.com/takebox/rclone/issues/6199#issuecomment-1570366202
 	}
 	if strings.HasPrefix(b.fs2.String(), "Dropbox") {
-		b.fs2.Features().Disable("Copy") // https://github.com/rclone/rclone/issues/6199#issuecomment-1570366202
+		b.fs2.Features().Disable("Copy") // https://github.com/takebox/rclone/issues/6199#issuecomment-1570366202
 	}
 	if strings.HasPrefix(b.fs1.String(), "OneDrive") {
-		b.fs1.Features().Disable("Copy") // API has longstanding bug for conflictBehavior=replace https://github.com/rclone/rclone/issues/4590
+		b.fs1.Features().Disable("Copy") // API has longstanding bug for conflictBehavior=replace https://github.com/takebox/rclone/issues/4590
 		b.fs1.Features().Disable("Move")
 	}
 	if strings.HasPrefix(b.fs2.String(), "OneDrive") {
-		b.fs2.Features().Disable("Copy") // API has longstanding bug for conflictBehavior=replace https://github.com/rclone/rclone/issues/4590
+		b.fs2.Features().Disable("Copy") // API has longstanding bug for conflictBehavior=replace https://github.com/takebox/rclone/issues/4590
 		b.fs2.Features().Disable("Move")
 	}
 	if strings.HasPrefix(b.fs1.String(), "sftp") {
@@ -1001,7 +999,7 @@ func (b *bisyncTest) checkPreReqs(ctx context.Context, opt *bisync.Options) (con
 		b.fs2.Features().Disable("Copy") // disable --sftp-copy-is-hardlink as hardlinks are not truly copies
 	}
 	if strings.Contains(strings.ToLower(fs.ConfigString(b.fs1)), "mailru") || strings.Contains(strings.ToLower(fs.ConfigString(b.fs2)), "mailru") {
-		fs.GetConfig(ctx).TPSLimit = 10 // https://github.com/rclone/rclone/issues/7768#issuecomment-2060888980
+		fs.GetConfig(ctx).TPSLimit = 10 // https://github.com/takebox/rclone/issues/7768#issuecomment-2060888980
 	}
 	if (!b.fs1.Features().CanHaveEmptyDirectories || !b.fs2.Features().CanHaveEmptyDirectories) && (b.testCase == "createemptysrcdirs" || b.testCase == "rmdirs") {
 		b.t.Skip("skipping test as remote does not support empty dirs")

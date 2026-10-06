@@ -13,23 +13,22 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/backend/imagekit/client"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/readers"
-	"github.com/rclone/rclone/lib/version"
+	"github.com/takebox/rclone/backend/imagekit/client"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/readers"
+	"github.com/takebox/rclone/lib/version"
 )
 
 const (
 	minSleep      = 1 * time.Millisecond
 	maxSleep      = 100 * time.Millisecond
-	decayConstant = 2
-)
+	decayConstant = 2 )
 
 var systemMetadataInfo = map[string]fs.MetadataHelp{
 	"btime": {

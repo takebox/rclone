@@ -12,8 +12,7 @@ const (
 	ctxKeyAuth ctxKey = iota
 	ctxKeyPublicURL
 	ctxKeyUnixSock
-	ctxKeyUser
-)
+	ctxKeyUser )
 
 // NewBaseContext initializes the context for all requests, adding info for use in middleware and handlers
 func NewBaseContext(ctx context.Context, url string) func(l net.Listener) context.Context {

@@ -11,16 +11,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/daemonize"
-	"github.com/rclone/rclone/lib/systemd"
-	"github.com/rclone/rclone/vfs"
-	"github.com/rclone/rclone/vfs/vfscommon"
-	"github.com/rclone/rclone/vfs/vfsflags"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/daemonize"
+	"github.com/takebox/rclone/lib/systemd"
+	"github.com/takebox/rclone/vfs"
+	"github.com/takebox/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/vfs/vfsflags"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
@@ -224,8 +224,7 @@ func NewMountPoint(mount MountFn, mountPoint string, f fs.Fs, mountOpt *Options,
 
 // Global constants
 const (
-	MaxLeafSize = 1024 // don't pass file names longer than this
-)
+	MaxLeafSize = 1024 // don't pass file names longer than this )
 
 // Opt contains options set by command line flags
 var Opt Options
@@ -236,8 +235,7 @@ func AddFlags(flagSet *pflag.FlagSet) {
 }
 
 const (
-	pollInterval = 100 * time.Millisecond
-)
+	pollInterval = 100 * time.Millisecond )
 
 // WaitMountReady waits until mountpoint is mounted by rclone.
 //

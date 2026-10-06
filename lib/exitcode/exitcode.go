@@ -23,5 +23,4 @@ const (
 	// NoFilesTransferred everything succeeded, but no transfer was made.
 	NoFilesTransferred
 	// DurationExceeded is returned when transfer duration exceeded the quota.
-	DurationExceeded
-)
+	DurationExceeded )

@@ -16,8 +16,8 @@ import (
 
 	"golang.org/x/crypto/nacl/secretbox"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/obscure"
 )
 
 var (
@@ -38,8 +38,7 @@ var (
 	// temp file is deleted once the configKey is successfully
 	// loaded. This can be used to pass the configKey to a child
 	// process.
-	PassConfigKeyForDaemonization = false
-)
+	PassConfigKeyForDaemonization = false )
 
 // IsEncrypted returns true if the config file is encrypted
 func IsEncrypted() bool {

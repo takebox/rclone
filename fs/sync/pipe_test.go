@@ -7,8 +7,8 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fstest/mockobject"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fstest/mockobject"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -99,8 +99,7 @@ func TestPipe(t *testing.T) {
 func TestPipeConcurrent(t *testing.T) {
 	const (
 		N           = 1000
-		readWriters = 10
-	)
+		readWriters = 10 )
 
 	stats := func(n int, size int64) {}
 

@@ -24,20 +24,20 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fspath"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/object"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/fstest/testserver"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/random"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fspath"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/object"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fs/walk"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/fstest/testserver"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/random"
+	"github.com/takebox/rclone/lib/readers"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -157,8 +157,7 @@ func PutTestContentsMetadata(ctx context.Context, t *testing.T, f fs.Fs, file *f
 	var (
 		err        error
 		obj        fs.Object
-		uploadHash *hash.MultiHasher
-	)
+		uploadHash *hash.MultiHasher )
 	retry(t, "Put", func() error {
 		buf := bytes.NewBufferString(contents)
 		uploadHash = hash.NewMultiHasher()
@@ -231,8 +230,7 @@ func testPutLarge(ctx context.Context, t *testing.T, f fs.Fs, file *fstest.Item,
 	var (
 		err        error
 		obj        fs.Object
-		uploadHash *hash.MultiHasher
-	)
+		uploadHash *hash.MultiHasher )
 	retry(t, "PutLarge", func() error {
 		r := readers.NewPatternReader(file.Size)
 		uploadHash = hash.NewMultiHasher()
@@ -377,8 +375,7 @@ func Run(t *testing.T, opt *Opt) {
 		purged               bool // whether the dir has been purged or not
 		ctx                  = context.Background()
 		ci                   = fs.GetConfig(ctx)
-		unwrappableFsMethods = []string{"Command"} // these Fs methods don't need to be wrapped ever
-	)
+		unwrappableFsMethods = []string{"Command"} // these Fs methods don't need to be wrapped ever )
 
 	if strings.HasSuffix(os.Getenv("RCLONE_CONFIG"), "/notfound") && *fstest.RemoteName == "" && !opt.QuickTestOK {
 		t.Skip("quicktest only")
@@ -2012,7 +2009,7 @@ func Run(t *testing.T, opt *Opt) {
 							return
 						}
 						// For OneDrive Personal, link expiry is a premium feature
-						// Don't let it fail the test (https://github.com/rclone/rclone/issues/5420)
+						// Don't let it fail the test (https://github.com/takebox/rclone/issues/5420)
 						if fsInfo.Name == "onedrive" && strings.Contains(err.Error(), "accountUpgradeRequired") {
 							t.Log("treating accountUpgradeRequired as success for PublicLink")
 							link, err = "bogus link to "+remote, nil
@@ -2310,8 +2307,7 @@ func Run(t *testing.T, opt *Opt) {
 						var (
 							err        error
 							obj        fs.Object
-							uploadHash *hash.MultiHasher
-						)
+							uploadHash *hash.MultiHasher )
 						retry(t, "PutStream", func() error {
 							contents := random.String(contentSize)
 							buf := bytes.NewBufferString(contents)
@@ -2602,7 +2598,7 @@ func Run(t *testing.T, opt *Opt) {
 		// an object in that folder, whose name is taken from a directory that
 		// exists in the absolute root.
 		// This test is added after
-		// https://github.com/rclone/rclone/issues/3164.
+		// https://github.com/takebox/rclone/issues/3164.
 		t.Run("FsRootCollapse", func(t *testing.T) {
 			deepRemoteName := subRemoteName + "/deeper/nonexisting/directory"
 			deepRemote, err := fs.NewFs(context.Background(), deepRemoteName)

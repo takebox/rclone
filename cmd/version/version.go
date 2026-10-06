@@ -14,17 +14,16 @@ import (
 	"time"
 
 	"github.com/coreos/go-semver/semver"
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/fshttp"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/fshttp"
 	"github.com/spf13/cobra"
 )
 
 var (
 	check = false
-	deps  = false
-)
+	deps  = false )
 
 func init() {
 	cmd.Root.AddCommand(commandDefinition)

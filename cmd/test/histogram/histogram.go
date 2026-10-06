@@ -8,10 +8,10 @@ import (
 	"os"
 	"path"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/cmd/test"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/walk"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/cmd/test"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/walk"
 	"github.com/spf13/cobra"
 )
 

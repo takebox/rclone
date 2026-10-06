@@ -15,18 +15,18 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/backend/uptobox/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/random"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/uptobox/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/random"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 const (
@@ -34,8 +34,7 @@ const (
 	minSleep       = 400 * time.Millisecond // api is extremely rate limited now
 	maxSleep       = 5 * time.Second
 	decayConstant  = 2 // bigger for slower decay, exponential
-	attackConstant = 0 // start with max sleep
-)
+	attackConstant = 0 // start with max sleep )
 
 func init() {
 	fs.Register(&fs.RegInfo{

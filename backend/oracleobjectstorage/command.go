@@ -13,8 +13,8 @@ import (
 
 	"github.com/oracle/oci-go-sdk/v65/common"
 	"github.com/oracle/oci-go-sdk/v65/objectstorage"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/operations"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/operations"
 )
 
 // ------------------------------------------------------------
@@ -351,8 +351,7 @@ func (f *Fs) restore(ctx context.Context, opt map[string]string) (any, error) {
 	var (
 		outMu sync.Mutex
 		out   = []status{}
-		err   error
-	)
+		err   error )
 	err = operations.ListFn(ctx, f, func(obj fs.Object) {
 		// Remember this is run --checkers times concurrently
 		o, ok := obj.(*Object)

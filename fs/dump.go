@@ -13,8 +13,7 @@ const (
 	DumpFilters
 	DumpGoRoutines
 	DumpOpenFiles
-	DumpMapper
-)
+	DumpMapper )
 
 type dumpChoices struct{}
 

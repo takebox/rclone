@@ -17,8 +17,7 @@ import (
 var (
 	// Flags
 	master  = flag.String("master", "master", "Branch to work out if merged into")
-	version = "development version" // overridden by goreleaser
-)
+	version = "development version" // overridden by goreleaser )
 
 func usage() {
 	fmt.Fprintf(os.Stderr, `Usage: %s [options]
@@ -37,8 +36,7 @@ Full options:
 }
 
 var (
-	printedSep = false
-)
+	printedSep = false )
 
 const (
 	sep1 = "============================================================"

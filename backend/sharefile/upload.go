@@ -15,11 +15,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/backend/sharefile/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/lib/readers"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/sharefile/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/lib/readers"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 // largeUpload is used to control the upload of large files which need chunking
@@ -176,8 +176,7 @@ func (up *largeUpload) Upload(ctx context.Context) error {
 		wg            sync.WaitGroup
 		err           error
 		wholeFileHash = md5.New()
-		eof           = false
-	)
+		eof           = false )
 outer:
 	for part := int64(0); !eof; part++ {
 		// Check any errors

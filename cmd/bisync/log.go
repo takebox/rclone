@@ -8,9 +8,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/terminal"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/terminal"
 )
 
 func (b *bisyncRun) indentf(tag, file, format string, args ...any) {
@@ -70,8 +70,7 @@ func quotePath(path string) string {
 // Colors controls whether terminal colors are enabled
 var (
 	Colors     bool
-	ColorsLock sync.Mutex
-)
+	ColorsLock sync.Mutex )
 
 // Color handles terminal colors for bisync
 func Color(style string, s string) string {

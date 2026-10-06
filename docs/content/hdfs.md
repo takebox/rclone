@@ -110,7 +110,7 @@ or use the docker image from the tests:
 If you want to build the docker image
 
 ```sh
-git clone https://github.com/rclone/rclone.git
+git clone https://github.com/takebox/rclone.git
 cd rclone/fstest/testserver/images/test-hdfs
 docker build --rm -t rclone/test-hdfs .
 ```
@@ -257,6 +257,6 @@ Properties:
 
 ## Limitations
 
-- Erasure coding not supported, see [issue #8808](https://github.com/rclone/rclone/issues/8808)
+- Erasure coding not supported, see [issue #8808](https://github.com/takebox/rclone/issues/8808)
 - No server-side `Move` or `DirMove`.
 - Checksums not implemented.

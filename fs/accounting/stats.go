@@ -11,16 +11,15 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/lib/terminal"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/lib/terminal"
 )
 
 const (
 	averagePeriodLength = time.Second
-	averageStopAfter    = time.Minute
-)
+	averageStopAfter    = time.Minute )
 
 // MaxCompletedTransfers specifies the default maximum number of
 // completed transfers in startedTransfers list. This can be adjusted
@@ -187,8 +186,7 @@ func (trs *timeRanges) merge() {
 	// Merge overlaps and add distinctive ranges together
 	var (
 		newTrs = Trs[:0]
-		i, j   = 0, 1
-	)
+		i, j   = 0, 1 )
 	for i < len(Trs) {
 		if j < len(Trs) {
 			if !Trs[i].end.Before(Trs[j].start) {
@@ -423,8 +421,7 @@ func (s *StatsInfo) String() string {
 		dateString             = ""
 		elapsedTime            = time.Since(s.startTime)
 		elapsedTimeSecondsOnly = elapsedTime.Truncate(time.Second/10) % time.Minute
-		displaySpeedString     string
-	)
+		displaySpeedString     string )
 
 	if s.ci.DataRateUnit == "bits" {
 		displaySpeedString = fs.SizeSuffix(ts.speed * 8).BitRateUnit()

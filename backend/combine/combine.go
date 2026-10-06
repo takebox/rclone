@@ -15,14 +15,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/list"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fs/walk"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/list"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fs/walk"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -1007,8 +1007,7 @@ func (f *Fs) MergeDirs(ctx context.Context, dirs []fs.Directory) error {
 	}
 	var (
 		u     *upstream
-		uDirs []fs.Directory
-	)
+		uDirs []fs.Directory )
 	for _, dir := range dirs {
 		uNew, uDir, err := f.findUpstream(dir.Remote())
 		if err != nil {

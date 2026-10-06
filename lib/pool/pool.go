@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/mmap"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/lib/mmap"
 	"golang.org/x/sync/semaphore"
 )
 
@@ -20,8 +20,7 @@ const (
 	// BufferCacheSize is the max number of buffers to keep in the cache for the Global() pool
 	BufferCacheSize = 64
 	// BufferCacheFlushTime is the max time to keep buffers in the Global() pool
-	BufferCacheFlushTime = 5 * time.Second
-)
+	BufferCacheFlushTime = 5 * time.Second )
 
 // Pool of internal buffers
 //
@@ -235,8 +234,7 @@ func (bp *Pool) GetN(n int) [][]byte {
 		bufs     [][]byte           // bufs so far
 		have     int                // have this many buffers in bp.cache
 		want     int                // want this many extra buffers
-		acquired bool               // whether we have acquired the memory or not
-	)
+		acquired bool               // whether we have acquired the memory or not )
 	for {
 		acquired = false
 		bp.mu.Unlock()

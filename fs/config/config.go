@@ -16,14 +16,14 @@ import (
 
 	"github.com/mitchellh/go-homedir"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fspath"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/lib/file"
-	"github.com/rclone/rclone/lib/random"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fspath"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/lib/file"
+	"github.com/takebox/rclone/lib/random"
 )
 
 const (
@@ -72,7 +72,7 @@ const (
 // persistent storage. Rclone provides a default implementation to
 // load and save to a config file when this is imported
 //
-// import "github.com/rclone/rclone/fs/config/configfile"
+// import "github.com/takebox/rclone/fs/config/configfile"
 // configfile.Install()
 type Storage interface {
 	// GetSectionList returns a slice of strings with names for all the
@@ -111,15 +111,13 @@ type Storage interface {
 // Global
 var (
 	// Password can be used to configure the random password generator
-	Password = random.Password
-)
+	Password = random.Password )
 
 var (
 	configPath string
 	cacheDir   string
 	data       Storage
-	dataLoaded bool
-)
+	dataLoaded bool )
 
 func init() {
 	// Set the function pointers up in fs
@@ -215,8 +213,7 @@ func makeConfigPath() string {
 		configFile        string
 		configDir         string
 		primaryConfigDir  string
-		fallbackConfigDir string
-	)
+		fallbackConfigDir string )
 	// <rclone_exe_dir>/rclone.conf
 	if _, configFile = findLocalConfig(); configFile != "" {
 		return configFile

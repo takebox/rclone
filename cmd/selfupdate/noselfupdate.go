@@ -3,7 +3,7 @@
 package selfupdate
 
 import (
-	"github.com/rclone/rclone/lib/buildinfo"
+	"github.com/takebox/rclone/lib/buildinfo"
 )
 
 func init() {

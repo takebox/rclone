@@ -13,8 +13,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/operations"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/operations"
 )
 
 var uploaderMap = make(map[string]*backgroundWriter)
@@ -496,8 +496,7 @@ const (
 	// BackgroundUploadCompleted is a state for a temp file that has completed upload
 	BackgroundUploadCompleted
 	// BackgroundUploadError is a state for a temp file that has an error upload
-	BackgroundUploadError
-)
+	BackgroundUploadError )
 
 // BackgroundUploadState is an entity that maps to an existing file which is stored on the temp fs
 type BackgroundUploadState struct {

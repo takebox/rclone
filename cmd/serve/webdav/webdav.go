@@ -17,21 +17,21 @@ import (
 
 	chi "github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/rclone/rclone/cmd"
-	cmdserve "github.com/rclone/rclone/cmd/serve"
-	"github.com/rclone/rclone/cmd/serve/proxy"
-	"github.com/rclone/rclone/cmd/serve/proxy/proxyflags"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/rc"
-	libhttp "github.com/rclone/rclone/lib/http"
-	"github.com/rclone/rclone/lib/http/serve"
-	"github.com/rclone/rclone/lib/systemd"
-	"github.com/rclone/rclone/vfs"
-	"github.com/rclone/rclone/vfs/vfscommon"
-	"github.com/rclone/rclone/vfs/vfsflags"
+	"github.com/takebox/rclone/cmd"
+	cmdserve "github.com/takebox/rclone/cmd/serve"
+	"github.com/takebox/rclone/cmd/serve/proxy"
+	"github.com/takebox/rclone/cmd/serve/proxy/proxyflags"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/rc"
+	libhttp "github.com/takebox/rclone/lib/http"
+	"github.com/takebox/rclone/lib/http/serve"
+	"github.com/takebox/rclone/lib/systemd"
+	"github.com/takebox/rclone/vfs"
+	"github.com/takebox/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/vfs/vfsflags"
 	"github.com/spf13/cobra"
 	"golang.org/x/net/webdav"
 )
@@ -598,8 +598,7 @@ func (h Handle) DeadProps() (map[xml.Name]webdav.Property, error) {
 func (h Handle) Patch(proppatches []webdav.Proppatch) ([]webdav.Propstat, error) {
 	var (
 		stat webdav.Propstat
-		err  error
-	)
+		err  error )
 	stat.Status = http.StatusOK
 	for _, patch := range proppatches {
 		for _, prop := range patch.Props {

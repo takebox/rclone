@@ -8,10 +8,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/rclone/rclone/backend/imagekit/client"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/lib/pacer"
+	"github.com/takebox/rclone/backend/imagekit/client"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/lib/pacer"
 )
 
 func (f *Fs) getFiles(ctx context.Context, path string, includeVersions bool) (files []client.File, err error) {

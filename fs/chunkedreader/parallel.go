@@ -6,12 +6,12 @@ import (
 	"io"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/multipart"
-	"github.com/rclone/rclone/lib/pool"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/log"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/multipart"
+	"github.com/takebox/rclone/lib/pool"
 )
 
 // parallel reads Object in chunks of a given size in parallel.

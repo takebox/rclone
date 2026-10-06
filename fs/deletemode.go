@@ -10,5 +10,4 @@ const (
 	DeleteModeDuring
 	DeleteModeAfter
 	DeleteModeOnly
-	DeleteModeDefault = DeleteModeAfter
-)
+	DeleteModeDefault = DeleteModeAfter )

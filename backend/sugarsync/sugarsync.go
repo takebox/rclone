@@ -26,20 +26,20 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/backend/sugarsync/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/dircache"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/sugarsync/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/dircache"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 /*
@@ -59,8 +59,7 @@ const (
 	decayConstant             = 2 // bigger for slower decay, exponential
 	rootURL                   = "https://api.sugarsync.com"
 	listChunks                = 500             // chunk size to read directory listings
-	expiryLeeway              = 5 * time.Minute // time before the token expires to renew
-)
+	expiryLeeway              = 5 * time.Minute // time before the token expires to renew )
 
 // withDefault returns value but if value is "" then it returns defaultValue
 func withDefault(key, defaultValue string) (value string) {

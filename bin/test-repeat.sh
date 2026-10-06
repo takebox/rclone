@@ -50,29 +50,23 @@ do
     case $i in
         -h|--help)
             echo "${help}"
-            exit 1
-            ;;
+            exit 1 ;;
         -b=*|--binary=*)
             binary="${i#*=}"
-            shift # past argument=value
-            ;;
+            shift # past argument=value ;;
         -l=*|--log-prefix=*)
             logprefix="${i#*=}"
-            shift # past argument=value
-            ;;
+            shift # past argument=value ;;
         -i=*|--iterations=*)
             iterations="${i#*=}"
-            shift # past argument=value
-            ;;
+            shift # past argument=value ;;
         -race|--race|-tags=*|--tags=*)
             buildflags="${buildflags} $i"
-            shift # past argument with no value
-            ;;
+            shift # past argument with no value ;;
         *)
             # unknown option
             flags="${flags} ${i#*=}"
-            shift
-            ;;
+            shift ;;
     esac
 done
 

@@ -15,21 +15,21 @@ import (
 	"time"
 
 	"github.com/coreos/go-semver/semver"
-	"github.com/rclone/rclone/backend/seafile/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/bucket"
-	"github.com/rclone/rclone/lib/cache"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/random"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/seafile/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/bucket"
+	"github.com/takebox/rclone/lib/cache"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/random"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 const (
@@ -49,8 +49,7 @@ const (
 // (copying from a seafile remote to another remote would create 2 fs)
 var (
 	rangeDownloadNotice sync.Once  // Display the notice only once
-	createLibraryMutex  sync.Mutex // Mutex to protect library creation
-)
+	createLibraryMutex  sync.Mutex // Mutex to protect library creation )
 
 // Register with Fs
 func init() {

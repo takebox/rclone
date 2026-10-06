@@ -21,8 +21,7 @@ func StringFn(n int, randReader io.Reader) string {
 	var (
 		pattern = []string{consonant, vowel, consonant, vowel, consonant, vowel, consonant, digit}
 		out     = make([]byte, n)
-		p       = 0
-	)
+		p       = 0 )
 	_, err := io.ReadFull(randReader, out)
 	if err != nil {
 		panic(fmt.Sprintf("internal error: failed to read from random reader: %v", err))

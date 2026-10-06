@@ -8,14 +8,14 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configflags"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/filter/filterflags"
-	"github.com/rclone/rclone/fs/log/logflags"
-	"github.com/rclone/rclone/fs/rc/rcflags"
-	"github.com/rclone/rclone/lib/atexit"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configflags"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/filter/filterflags"
+	"github.com/takebox/rclone/fs/log/logflags"
+	"github.com/takebox/rclone/fs/rc/rcflags"
+	"github.com/takebox/rclone/lib/atexit"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"golang.org/x/text/cases"
@@ -58,8 +58,7 @@ var helpCommand = &cobra.Command{
 var (
 	filterFlagsGroup     string
 	filterFlagsRe        *regexp.Regexp
-	filterFlagsNamesOnly bool
-)
+	filterFlagsNamesOnly bool )
 
 // Show the flags
 var helpFlags = &cobra.Command{

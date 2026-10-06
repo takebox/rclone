@@ -12,12 +12,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/fs/rc/jobs"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/fs/rc/jobs"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 )
@@ -31,8 +31,7 @@ var (
 	authPass   = ""
 	loopback   = false
 	options    []string
-	arguments  []string
-)
+	arguments  []string )
 
 func init() {
 	cmd.Root.AddCommand(commandDefinition)

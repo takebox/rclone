@@ -21,16 +21,16 @@ import (
 	"time"
 
 	"github.com/pkg/sftp"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/env"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/env"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/readers"
 	sshagent "github.com/xanzy/ssh-agent"
 	"golang.org/x/crypto/ssh"
 	"golang.org/x/crypto/ssh/knownhosts"
@@ -43,8 +43,7 @@ const (
 	minSleep                = 100 * time.Millisecond
 	maxSleep                = 2 * time.Second
 	decayConstant           = 2           // bigger for slower decay, exponential
-	keepAliveInterval       = time.Minute // send keepalives every this long while running commands
-)
+	keepAliveInterval       = time.Minute // send keepalives every this long while running commands )
 
 var (
 	currentUser          = env.CurrentUser()

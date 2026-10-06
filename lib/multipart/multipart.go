@@ -6,18 +6,17 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/pool"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/pool"
 	"golang.org/x/sync/errgroup"
 )
 
 const (
 	// BufferSize is the default size of the pages used in the reader
-	BufferSize = pool.BufferSize
-)
+	BufferSize = pool.BufferSize )
 
 // NewRW gets a pool.RW using the global pool
 func NewRW() *pool.RW {
@@ -64,8 +63,7 @@ func UploadMultipart(ctx context.Context, src fs.ObjectInfo, in io.Reader, opt U
 		finished  = false
 		off       int64
 		size      = src.Size()
-		chunkSize = info.ChunkSize
-	)
+		chunkSize = info.ChunkSize )
 
 	// Do the accounting manually
 	in, acc := accounting.UnWrapAccounting(in)

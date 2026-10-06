@@ -13,10 +13,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/lib/errcount"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/lib/errcount"
 )
 
 // Handle describes what a server can do

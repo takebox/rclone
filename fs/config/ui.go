@@ -15,13 +15,13 @@ import (
 	"unicode/utf8"
 
 	"github.com/peterh/liner"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/driveletter"
-	"github.com/rclone/rclone/fs/fspath"
-	"github.com/rclone/rclone/lib/terminal"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/driveletter"
+	"github.com/takebox/rclone/fs/fspath"
+	"github.com/takebox/rclone/lib/terminal"
 	"golang.org/x/text/unicode/norm"
 )
 
@@ -555,8 +555,7 @@ func NewRemote(ctx context.Context, name string) error {
 	var (
 		newType string
 		ri      *fs.RegInfo
-		err     error
-	)
+		err     error )
 
 	// Set the type first
 	for {

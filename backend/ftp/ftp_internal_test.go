@@ -7,12 +7,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/object"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/fstest/fstests"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/object"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/fstest/fstests"
+	"github.com/takebox/rclone/lib/readers"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -36,8 +36,7 @@ func (f *Fs) testUploadTimeout(t *testing.T) {
 	const (
 		fileSize    = 100000000        // 100 MiB
 		idleTimeout = 1 * time.Second  // small because test server is local
-		maxTime     = 10 * time.Second // prevent test hangup
-	)
+		maxTime     = 10 * time.Second // prevent test hangup )
 
 	if testing.Short() {
 		t.Skip("not running with -short")

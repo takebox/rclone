@@ -17,8 +17,7 @@ type (
 	// AttackConstant configures the attack constant of a Calculator
 	AttackConstant uint
 	// Burst configures the number of API calls to allow without sleeping
-	Burst int
-)
+	Burst int )
 
 // Default is a truncated exponential attack and decay.
 //

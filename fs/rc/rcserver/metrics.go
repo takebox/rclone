@@ -8,11 +8,11 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/fs/rc/jobs"
-	libhttp "github.com/rclone/rclone/lib/http"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/fs/rc/jobs"
+	libhttp "github.com/takebox/rclone/lib/http"
 )
 
 const path = "/metrics"

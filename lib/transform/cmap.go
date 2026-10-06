@@ -5,14 +5,13 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 	"golang.org/x/text/encoding/charmap"
 )
 
 var (
 	cmaps = map[int]*charmap.Charmap{}
-	lock  sync.Mutex
-)
+	lock  sync.Mutex )
 
 // CharmapChoices is an enum of the character map choices.
 type CharmapChoices = fs.Enum[cmapChoices]

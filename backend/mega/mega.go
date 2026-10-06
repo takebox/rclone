@@ -28,17 +28,17 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/readers"
 	mega "github.com/t3rm1n4l/go-mega"
 )
 
@@ -46,13 +46,11 @@ const (
 	minSleep      = 10 * time.Millisecond
 	maxSleep      = 2 * time.Second
 	eventWaitTime = 500 * time.Millisecond
-	decayConstant = 2 // bigger for slower decay, exponential
-)
+	decayConstant = 2 // bigger for slower decay, exponential )
 
 var (
 	megaCacheMu sync.Mutex                // mutex for the below
-	megaCache   = map[string]*mega.Mega{} // cache logged in Mega's by user
-)
+	megaCache   = map[string]*mega.Mega{} // cache logged in Mega's by user )
 
 // Register with Fs
 func init() {
@@ -222,7 +220,7 @@ func NewFs(ctx context.Context, name, root string, m configmap.Mapper) (fs.Fs, e
 
 		// Workaround for Mega's use of insecure cipher suites which are no longer supported by default since Go 1.22.
 		// Relevant issues:
-		// https://github.com/rclone/rclone/issues/8565
+		// https://github.com/takebox/rclone/issues/8565
 		// https://github.com/meganz/webclient/issues/103
 		clt := fshttp.NewClient(ctx)
 		clt.Transport = fshttp.NewTransportCustom(ctx, func(t *http.Transport) {
@@ -719,8 +717,7 @@ func (f *Fs) move(ctx context.Context, dstRemote string, srcFs *Fs, srcRemote st
 		dstFs                  = f
 		srcDirNode, dstDirNode *mega.Node
 		srcParent, dstParent   string
-		srcLeaf, dstLeaf       string
-	)
+		srcLeaf, dstLeaf       string )
 
 	if dstRemote != "" {
 		// lookup or create the destination parent directory

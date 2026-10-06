@@ -21,25 +21,25 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/rclone/rclone/backend/mailru/api"
-	"github.com/rclone/rclone/backend/mailru/mrhash"
+	"github.com/takebox/rclone/backend/mailru/api"
+	"github.com/takebox/rclone/backend/mailru/mrhash"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/object"
-	"github.com/rclone/rclone/fs/operations"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/object"
+	"github.com/takebox/rclone/fs/operations"
 
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/oauthutil"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/readers"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/oauthutil"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/readers"
+	"github.com/takebox/rclone/lib/rest"
 
 	"golang.org/x/oauth2"
 )
@@ -54,8 +54,7 @@ const (
 	shardExpirySec  = 30 * 60    // upload server expiration time
 	maxServerLocks  = 4          // maximum number of locks per single download server
 	maxInt32        = 2147483647 // used as limit in directory list request
-	speedupMinSize  = 512        // speedup is not optimal if data is smaller than average packet
-)
+	speedupMinSize  = 512        // speedup is not optimal if data is smaller than average packet )
 
 // Global errors
 var (
@@ -64,8 +63,7 @@ var (
 	ErrorInvalidName        = errors.New("invalid characters in object name")
 
 	// MrHashType is the hash.Type for Mailru
-	MrHashType hash.Type
-)
+	MrHashType hash.Type )
 
 // Description of how to authorize
 var oauthConfig = &oauthutil.Config{
@@ -557,8 +555,7 @@ func (f *Fs) metaServer(ctx context.Context) (string, error) {
 	var (
 		res *http.Response
 		url string
-		err error
-	)
+		err error )
 	err = f.pacer.Call(func() (bool, error) {
 		res, err = f.srv.Call(ctx, &opts)
 		if err == nil {
@@ -742,8 +739,7 @@ func (f *Fs) listM1(ctx context.Context, dirPath string, offset int, limit int) 
 
 	var (
 		info api.FolderInfoResponse
-		res  *http.Response
-	)
+		res  *http.Response )
 	err = f.pacer.Call(func() (bool, error) {
 		res, err = f.srv.CallJSON(ctx, &opts, nil, &info)
 		return shouldRetry(ctx, res, err, f, &opts)
@@ -932,8 +928,7 @@ func (t *treeState) NextRecord() (fs.DirEntry, error) {
 		size    int64
 		binHash []byte
 		dirSize int64
-		isDir   = true
-	)
+		isDir   = true )
 
 	switch itemType {
 	case api.ListItemMountPoint:
@@ -1618,8 +1613,7 @@ func (o *Object) Update(ctx context.Context, in io.Reader, src fs.ObjectInfo, op
 		fileHash []byte
 		newHash  []byte
 		slowHash bool
-		localSrc bool
-	)
+		localSrc bool )
 	if srcObj := fs.UnWrapObjectInfo(src); srcObj != nil {
 		srcFeatures := srcObj.Fs().Features()
 		slowHash = srcFeatures.SlowHash
@@ -1863,8 +1857,7 @@ func (o *Object) upload(ctx context.Context, in io.Reader, size int64, options .
 
 	var (
 		res     *http.Response
-		strHash string
-	)
+		strHash string )
 	err = o.fs.pacer.Call(func() (bool, error) {
 		res, err = o.fs.srv.Call(ctx, &opts)
 		if err == nil {
@@ -1902,8 +1895,7 @@ func (f *Fs) uploadShard(ctx context.Context) (string, error) {
 	var (
 		res *http.Response
 		url string
-		err error
-	)
+		err error )
 	err = f.pacer.Call(func() (bool, error) {
 		res, err = f.srv.Call(ctx, &opts)
 		if err == nil {
@@ -2194,8 +2186,7 @@ func (o *Object) Open(ctx context.Context, options ...fs.OpenOption) (in io.Read
 
 	var (
 		hasher     gohash.Hash
-		wrapStream io.ReadCloser
-	)
+		wrapStream io.ReadCloser )
 	if !partialResponse {
 		// Cannot check hash of partial download
 		hasher = mrhash.New()
@@ -2305,8 +2296,7 @@ func (p *serverPool) Dispatch(ctx context.Context, current string) (string, erro
 	}
 	var (
 		res *http.Response
-		err error
-	)
+		err error )
 	err = p.fs.pacer.Call(func() (bool, error) {
 		res, err = p.fs.srv.Call(ctx, &opts)
 		if err != nil {

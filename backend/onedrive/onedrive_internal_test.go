@@ -8,19 +8,19 @@ import (
 	"testing"
 	"time"
 
-	_ "github.com/rclone/rclone/backend/local"
-	"github.com/rclone/rclone/backend/onedrive/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/fstest/fstests"
-	"github.com/rclone/rclone/lib/random"
+	_ "github.com/takebox/rclone/backend/local"
+	"github.com/takebox/rclone/backend/onedrive/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/fstest/fstests"
+	"github.com/takebox/rclone/lib/random"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
-// go test -timeout 30m -run ^TestIntegration/FsMkdir/FsPutFiles/Internal$ github.com/rclone/rclone/backend/onedrive -remote TestOneDrive:meta -v
-// go test -timeout 30m -run ^TestIntegration/FsMkdir/FsPutFiles/Internal$ github.com/rclone/rclone/backend/onedrive -remote TestOneDriveBusiness:meta -v
+// go test -timeout 30m -run ^TestIntegration/FsMkdir/FsPutFiles/Internal$ github.com/takebox/rclone/backend/onedrive -remote TestOneDrive:meta -v
+// go test -timeout 30m -run ^TestIntegration/FsMkdir/FsPutFiles/Internal$ github.com/takebox/rclone/backend/onedrive -remote TestOneDriveBusiness:meta -v
 // go run ./fstest/test_all -remotes TestOneDriveBusiness:meta,TestOneDrive:meta -verbose -maxtries 1
 
 var (
@@ -33,8 +33,7 @@ var (
 
 const (
 	testUserID = "ryan@contoso.com" // demo user from doc examples (can't share files with yourself)
-	// https://learn.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_invite?view=odsp-graph-online#http-request-1
-)
+	// https://learn.microsoft.com/en-us/onedrive/developer/rest-api/api/driveitem_invite?view=odsp-graph-online#http-request-1 )
 
 // TestMain drives the tests
 func TestMain(m *testing.M) {

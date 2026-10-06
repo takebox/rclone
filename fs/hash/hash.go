@@ -101,8 +101,7 @@ var (
 	XXH3 Type
 
 	// XXH128 indicates XXH128 support, also known as XXH3-128, a variant of xxHash
-	XXH128 Type
-)
+	XXH128 Type )
 
 type xxh128Hasher struct {
 	xxh3.Hasher

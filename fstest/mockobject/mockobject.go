@@ -9,8 +9,8 @@ import (
 	"io"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/hash"
 )
 
 var errNotImpl = errors.New("not implemented")
@@ -87,8 +87,7 @@ const (
 	// SeekModeRegular specifies the regular io.Seek interface
 	SeekModeRegular
 	// SeekModeRange specifies the fs.RangeSeek interface
-	SeekModeRange
-)
+	SeekModeRange )
 
 // SeekModes contains all valid SeekMode's
 var SeekModes = []SeekMode{SeekModeNone, SeekModeRegular, SeekModeRange}

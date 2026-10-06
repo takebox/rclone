@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 // Implement the sshClient interface for external ssh programs

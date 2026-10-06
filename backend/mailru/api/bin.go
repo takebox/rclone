@@ -4,8 +4,7 @@ package api
 const (
 	BinContentType    = "application/x-www-form-urlencoded"
 	TreeIDLength      = 12
-	DunnoNodeIDLength = 16
-)
+	DunnoNodeIDLength = 16 )
 
 // Operations in binary protocol
 const (
@@ -17,8 +16,7 @@ const (
 	// TODO investigate opcodes below
 	Operation154MaybeItemInfo = 154 // 0x9A
 	Operation102MaybeAbout    = 102 // 0x66
-	Operation104MaybeDelete   = 104 // 0x68
-)
+	Operation104MaybeDelete   = 104 // 0x68 )
 
 // CreateDir protocol constants
 const (
@@ -27,8 +25,7 @@ const (
 	MkdirResultAlreadyExists       = 4
 	MkdirResultExistsDifferentCase = 9
 	MkdirResultInvalidName         = 10
-	MkdirResultFailed254           = 254
-)
+	MkdirResultFailed254           = 254 )
 
 // Move result codes
 const (
@@ -37,8 +34,7 @@ const (
 	MoveResultFailed002       = 2
 	MoveResultAlreadyExists   = 4
 	MoveResultFailed005       = 5
-	MoveResultFailed254       = 254
-)
+	MoveResultFailed254       = 254 )
 
 // AddFile result codes
 const (
@@ -51,8 +47,7 @@ const (
 	AddResultInvalidName = 10
 	AddResultNotModified = 12
 	AddResultFailedA     = 253
-	AddResultFailedB     = 254
-)
+	AddResultFailedB     = 254 )
 
 // List request options
 const (
@@ -64,8 +59,7 @@ const (
 	ListOptFolderSize  = 32
 	ListOptUsedSpace   = 64
 	ListOptUnknown128  = 128
-	ListOptUnknown256  = 256
-)
+	ListOptUnknown256  = 256 )
 
 // ListOptDefaults ...
 const ListOptDefaults = ListOptUnknown128 | ListOptUnknown256 | ListOptFolderSize | ListOptTotalSpace | ListOptUsedSpace
@@ -76,8 +70,7 @@ const (
 	ListParseReadItem  = 1
 	ListParsePin       = 2
 	ListParsePinUpper  = 3
-	ListParseUnknown15 = 15
-)
+	ListParseUnknown15 = 15 )
 
 // List operation results
 const (
@@ -95,13 +88,11 @@ const (
 	ListResultDunno11         = 11
 	ListResultDunno12         = 12
 	ListResultFailedB         = 253
-	ListResultFailedA         = 254
-)
+	ListResultFailedA         = 254 )
 
 // Directory item types
 const (
 	ListItemMountPoint   = 0
 	ListItemFile         = 1
 	ListItemFolder       = 2
-	ListItemSharedFolder = 3
-)
+	ListItemSharedFolder = 3 )

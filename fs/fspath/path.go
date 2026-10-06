@@ -8,8 +8,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/driveletter"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/driveletter"
 )
 
 const (
@@ -123,8 +123,7 @@ func Parse(path string) (parsed Parsed, err error) {
 		stateValue
 		stateQuotedValue
 		stateAfterQuote
-		stateDone
-	)
+		stateDone )
 	var (
 		state   = stateConfigName // current state of parser
 		i       int               // position in path
@@ -132,8 +131,7 @@ func Parse(path string) (parsed Parsed, err error) {
 		c       rune              // current rune under consideration
 		quote   rune              // kind of quote to end this quoted string
 		param   string            // current parameter value
-		doubled bool              // set if had doubled quotes
-	)
+		doubled bool              // set if had doubled quotes )
 loop:
 	for i, c = range path {
 		// Example Parse

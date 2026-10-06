@@ -10,13 +10,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/file"
-	"github.com/rclone/rclone/lib/ranges"
-	"github.com/rclone/rclone/vfs/vfscache/downloaders"
-	"github.com/rclone/rclone/vfs/vfscache/writeback"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/file"
+	"github.com/takebox/rclone/lib/ranges"
+	"github.com/takebox/rclone/vfs/vfscache/downloaders"
+	"github.com/takebox/rclone/vfs/vfscache/writeback"
 )
 
 // NB as Cache and Item are tightly linked it is necessary to have a
@@ -93,8 +93,7 @@ const (
 	SkippedEmpty                            // Reset empty item does not save space
 	RemovedNotInUse                         // Item not used. Remove instead of reset
 	ResetFailed                             // Reset failed with an error
-	ResetComplete                           // Reset completed successfully
-)
+	ResetComplete                           // Reset completed successfully )
 
 func (rr ResetResult) String() string {
 	return [...]string{"Dirty item skipped", "In-access item skipped", "Empty item skipped",
@@ -649,8 +648,7 @@ func (item *Item) Close(storeFn StoreFn) (err error) {
 	defer item.postAccess()
 	var (
 		downloaders   *downloaders.Downloaders
-		syncWriteBack = item.c.opt.WriteBack <= 0
-	)
+		syncWriteBack = item.c.opt.WriteBack <= 0 )
 	item.mu.Lock()
 	defer item.mu.Unlock()
 
@@ -1161,8 +1159,8 @@ func (item *Item) _ensure(offset, size int64) (err error) {
 		// OK to call downloaders constructor with item.mu held
 
 		// item.o can also be nil under some circumstances
-		// See: https://github.com/rclone/rclone/issues/6190
-		// See: https://github.com/rclone/rclone/issues/6235
+		// See: https://github.com/takebox/rclone/issues/6190
+		// See: https://github.com/takebox/rclone/issues/6235
 		if item.o == nil {
 			o, err := item.c.fremote.NewObject(context.Background(), item.name)
 			if err != nil {
@@ -1355,8 +1353,7 @@ func (item *Item) WriteAtNoOverwrite(b []byte, off int64) (n int, skipped int, e
 		// Ranges that we need to write
 		foundRanges = item.info.Rs.FindAll(r)
 		// Length of each write
-		nn int
-	)
+		nn int )
 
 	// Write the range out ignoring already written chunks
 	// fs.Debugf(item.name, "Ranges = %v", item.info.Rs)

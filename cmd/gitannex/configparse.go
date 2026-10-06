@@ -5,9 +5,9 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/fspath"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/fspath"
 )
 
 type configID int
@@ -15,8 +15,7 @@ type configID int
 const (
 	configRemoteName configID = iota
 	configPrefix
-	configLayout
-)
+	configLayout )
 
 // configDefinition describes a configuration value required by this command. We
 // use "GETCONFIG" messages to query git-annex for these values at runtime.

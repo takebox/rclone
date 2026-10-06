@@ -4,16 +4,15 @@ package authorize
 import (
 	"context"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/flags"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/flags"
 	"github.com/spf13/cobra"
 )
 
 var (
 	noAutoBrowser bool
-	template      string
-)
+	template      string )
 
 func init() {
 	cmd.Root.AddCommand(commandDefinition)

@@ -5,10 +5,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/rclone/rclone/cmd/bisync/bilib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/lib/terminal"
+	"github.com/takebox/rclone/cmd/bisync/bilib"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/lib/terminal"
 )
 
 // for backward compatibility, --resync is now equivalent to --resync-mode path1

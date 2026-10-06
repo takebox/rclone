@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	_ "github.com/rclone/rclone/backend/local"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fstest"
+	_ "github.com/takebox/rclone/backend/local"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fstest"
 	"github.com/stretchr/testify/require"
 )
 

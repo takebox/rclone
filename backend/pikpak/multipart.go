@@ -12,28 +12,26 @@ import (
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go-v2/service/s3/types"
-	"github.com/rclone/rclone/backend/pikpak/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/chunksize"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/pool"
+	"github.com/takebox/rclone/backend/pikpak/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/chunksize"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/pool"
 	"golang.org/x/sync/errgroup"
 )
 
 const (
 	bufferSize           = 1024 * 1024     // default size of the pages used in the reader
 	bufferCacheSize      = 64              // max number of buffers to keep in cache
-	bufferCacheFlushTime = 5 * time.Second // flush the cached buffers after this long
-)
+	bufferCacheFlushTime = 5 * time.Second // flush the cached buffers after this long )
 
 // bufferPool is a global pool of buffers
 var (
 	bufferPool     *pool.Pool
-	bufferPoolOnce sync.Once
-)
+	bufferPoolOnce sync.Once )
 
 // get a buffer pool
 func getPool() *pool.Pool {
@@ -71,8 +69,7 @@ func (w *pikpakChunkWriter) Upload(ctx context.Context) (err error) {
 		finished  = false
 		off       int64
 		size      = w.size
-		chunkSize = w.chunkSize
-	)
+		chunkSize = w.chunkSize )
 
 	// Do the accounting manually
 	in, acc := accounting.UnWrapAccounting(w.in)

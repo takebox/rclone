@@ -25,11 +25,11 @@ with the [latest beta of rclone](https://beta.rclone.org/):
 If you find a bug that you'd like to fix, or a new feature that you'd
 like to implement then please submit a pull request via GitHub.
 
-If it is a big feature, then [make an issue](https://github.com/rclone/rclone/issues)
+If it is a big feature, then [make an issue](https://github.com/takebox/rclone/issues)
 first so it can be discussed.
 
 To prepare your pull request first press the fork button on [rclone's GitHub
-page](https://github.com/rclone/rclone).
+page](https://github.com/takebox/rclone).
 
 Then [install Git](https://git-scm.com/downloads) and set your public contribution
 [name](https://docs.github.com/en/github/getting-started-with-github/setting-your-username-in-git)
@@ -39,13 +39,13 @@ Next open your terminal, change directory to your preferred folder and initialis
 your local rclone project:
 
 ```sh
-git clone https://github.com/rclone/rclone.git
+git clone https://github.com/takebox/rclone.git
 cd rclone
 git remote rename origin upstream
   # if you have SSH keys setup in your GitHub account:
 git remote add origin git@github.com:YOURUSER/rclone.git
   # otherwise:
-git remote add origin https://github.com/YOURUSER/rclone.git
+git remote add origin https://github.com/takebox/rclone.git
 ```
 
 Note that most of the terminal commands in the rest of this guide must be
@@ -152,7 +152,7 @@ git push --force origin my-new-feature
 ### Basing your changes on the latest master
 
 To base your changes on the latest version of the
-[rclone master](https://github.com/rclone/rclone/tree/master) (upstream):
+[rclone master](https://github.com/takebox/rclone/tree/master) (upstream):
 
 ```sh
 git checkout master
@@ -197,7 +197,7 @@ more complex situation.
 
 ### GitHub Continuous Integration
 
-rclone currently uses [GitHub Actions](https://github.com/rclone/rclone/actions)
+rclone currently uses [GitHub Actions](https://github.com/takebox/rclone/actions)
 to build and test the project, which should be automatically available for your
 fork too from the `Actions` tab in your repository.
 
@@ -269,7 +269,7 @@ altogether with an HTML report and test retries then from the
 project root:
 
 ```sh
-go install github.com/rclone/rclone/fstest/test_all
+go install github.com/takebox/rclone/fstest/test_all
 test_all -backends drive
 ```
 
@@ -542,11 +542,11 @@ remote or an fs.
   - b2 is a good one to start from if you have a bucket-based remote
 - Add your remote to the imports in `backend/all/all.go`
 - HTTP based remotes are easiest to maintain if they use rclone's
-  [lib/rest](https://pkg.go.dev/github.com/rclone/rclone/lib/rest) module, but
+  [lib/rest](https://pkg.go.dev/github.com/takebox/rclone/lib/rest) module, but
   if there is a really good Go SDK from the provider then use that instead.
 - Try to implement as many optional methods as possible as it makes the remote
   more usable.
-- Use [lib/encoder](https://pkg.go.dev/github.com/rclone/rclone/lib/encoder) to
+- Use [lib/encoder](https://pkg.go.dev/github.com/takebox/rclone/lib/encoder) to
   make sure we can encode any path name and `rclone info` to help determine the
   encodings needed
   - `rclone purge -v TestRemote:rclone-info`
@@ -556,9 +556,9 @@ remote or an fs.
 
 ### Guidelines for a speedy merge
 
-- **Do** use [lib/rest](https://pkg.go.dev/github.com/rclone/rclone/lib/rest)
+- **Do** use [lib/rest](https://pkg.go.dev/github.com/takebox/rclone/lib/rest)
   if you are implementing a REST like backend and parsing XML/JSON in the backend.
-- **Do** use rclone's Client or Transport from [fs/fshttp](https://pkg.go.dev/github.com/rclone/rclone/fs/fshttp)
+- **Do** use rclone's Client or Transport from [fs/fshttp](https://pkg.go.dev/github.com/takebox/rclone/fs/fshttp)
   if your backend is HTTP based - this adds features like `--dump bodies`,
   `--tpslimit`, `--user-agent` without you having to code anything!
 - **Do** follow your example backend exactly - use the same code order, function
@@ -658,7 +658,7 @@ in the names so if these fail and the provider doesn't support
 `urlEncodeListings` in the quirks then ignore them. Note that the
 `SetTier` test may also fail on non AWS providers.
 
-For an example of adding an s3 provider see [eb3082a1](https://github.com/rclone/rclone/commit/eb3082a1ebdb76d5625f14cedec3f5154a5e7b10).
+For an example of adding an s3 provider see [eb3082a1](https://github.com/takebox/rclone/commit/eb3082a1ebdb76d5625f14cedec3f5154a5e7b10).
 
 ## Writing a plugin
 
@@ -693,7 +693,7 @@ host Go version match.
 
 Then, run `go build -buildmode=plugin -o PLUGIN_NAME.so .` to build the plugin.
 
-[Go reference](https://godoc.org/github.com/rclone/rclone/lib/plugin)
+[Go reference](https://godoc.org/github.com/takebox/rclone/lib/plugin)
 
 ## Keeping a backend or command out of tree
 

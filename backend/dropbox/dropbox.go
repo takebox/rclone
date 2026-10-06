@@ -39,20 +39,20 @@ import (
 	"github.com/dropbox/dropbox-sdk-go-unofficial/v6/dropbox/sharing"
 	"github.com/dropbox/dropbox-sdk-go-unofficial/v6/dropbox/team"
 	"github.com/dropbox/dropbox-sdk-go-unofficial/v6/dropbox/users"
-	"github.com/rclone/rclone/backend/dropbox/dbhash"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/batcher"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/oauthutil"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/backend/dropbox/dbhash"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/batcher"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/oauthutil"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/readers"
 	"golang.org/x/oauth2"
 )
 
@@ -89,8 +89,7 @@ const (
 	defaultChunkSize = 48 * fs.Mebi
 	maxChunkSize     = 150 * fs.Mebi
 	// Max length of filename parts: https://help.dropbox.com/installs-integrations/sync-uploads/files-not-syncing
-	maxFileNameLength = 255
-)
+	maxFileNameLength = 255 )
 
 type exportAPIFormat string
 type exportExtension string // dotless
@@ -343,8 +342,7 @@ const (
 	notExport        exportType = iota // a regular file
 	exportHide                         // should be hidden
 	exportListOnly                     // listable, but can't export
-	exportExportable                   // can export
-)
+	exportExportable                   // can export )
 
 // Object describes a dropbox object
 //

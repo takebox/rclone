@@ -10,11 +10,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/rc"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/rc"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 )
@@ -487,8 +487,7 @@ To reconnect use "rclone config reconnect".`,
 }
 
 var (
-	jsonOutput bool
-)
+	jsonOutput bool )
 
 func init() {
 	flags.BoolVarP(configUserInfoCommand.Flags(), &jsonOutput, "json", "", false, "Format output as JSON", "")

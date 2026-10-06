@@ -10,16 +10,15 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/terminal"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/log"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/terminal"
 )
 
 const (
 	// interval between progress prints
-	defaultProgressInterval = 500 * time.Millisecond
-)
+	defaultProgressInterval = 500 * time.Millisecond )
 
 // startProgress starts the progress bar printing
 //
@@ -74,8 +73,7 @@ func startProgress() func() {
 
 // state for the progress printing
 var (
-	nlines = 0 // number of lines in the previous stats block
-)
+	nlines = 0 // number of lines in the previous stats block )
 
 // printProgress prints the progress with an optional log
 func printProgress(logMessage string) {

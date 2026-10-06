@@ -9,9 +9,9 @@ import (
 	"path"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/bucket"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/bucket"
 	"golang.org/x/text/unicode/norm"
 
 	"storj.io/uplink"
@@ -132,8 +132,7 @@ func (o *Object) Open(ctx context.Context, options ...fs.OpenOption) (_ io.ReadC
 	// that libuplink can use.
 	var (
 		offset int64
-		length int64 = -1
-	)
+		length int64 = -1 )
 
 	for _, option := range options {
 		switch opt := option.(type) {

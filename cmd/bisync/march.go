@@ -5,11 +5,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/march"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/march"
 )
 
 type bisyncMarch struct {
@@ -137,8 +137,7 @@ func (b *bisyncRun) ForObject(o fs.Object, isPath1 bool) {
 	}()
 	var (
 		hashVal string
-		hashErr error
-	)
+		hashErr error )
 	ls := b.whichLs(isPath1)
 	hashType := ls.hash
 	if hashType != hash.None {

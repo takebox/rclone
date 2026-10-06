@@ -19,8 +19,7 @@ func SOCKS5Dial(network, addr, socks5Proxy string, proxyDialer proxy.Dialer) (ne
 	}
 	var (
 		proxyAddress string
-		proxyAuth    *proxy.Auth
-	)
+		proxyAuth    *proxy.Auth )
 	if credsAndHost := strings.SplitN(socks5Proxy, "@", 2); len(credsAndHost) == 2 {
 		proxyCreds := strings.SplitN(credsAndHost[0], ":", 2)
 		proxyAuth = &proxy.Auth{

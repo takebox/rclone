@@ -9,8 +9,7 @@ import (
 
 // Constants to control the benchmarking
 const (
-	maxAllocs = 16 * 1024
-)
+	maxAllocs = 16 * 1024 )
 
 func TestAllocFree(t *testing.T) {
 	const Size = 4096

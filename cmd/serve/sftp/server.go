@@ -22,14 +22,14 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/rclone/rclone/cmd/serve/proxy"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/lib/env"
-	"github.com/rclone/rclone/lib/file"
-	sdActivation "github.com/rclone/rclone/lib/sdactivation"
-	"github.com/rclone/rclone/vfs"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/cmd/serve/proxy"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/lib/env"
+	"github.com/takebox/rclone/lib/file"
+	sdActivation "github.com/takebox/rclone/lib/sdactivation"
+	"github.com/takebox/rclone/vfs"
+	"github.com/takebox/rclone/vfs/vfscommon"
 	"golang.org/x/crypto/ssh"
 )
 

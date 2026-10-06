@@ -7,10 +7,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/lib/bucket"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/lib/bucket"
 )
 
 // DirSorted reads Object and *Dir into entries for the given Fs.

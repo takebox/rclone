@@ -8,8 +8,8 @@ import (
 	"io"
 	mutex "sync"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/hash"
 	"github.com/spf13/pflag"
 )
 
@@ -61,8 +61,7 @@ const (
 	Match         Sigil = '='
 	Differ        Sigil = '*'
 	TransferError Sigil = '!'
-	Other         Sigil = '?' // reserved but not currently used
-)
+	Other         Sigil = '?' // reserved but not currently used )
 
 // LoggerFn uses fs.DirEntry instead of fs.Object so it can include Dirs
 // For LoggerFn example, see bisync.WriteResults() or sync.SyncLoggerFn()

@@ -6,13 +6,13 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/lib/dircache"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/oauthutil"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/lib/dircache"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/oauthutil"
 )
 
 /*
@@ -35,8 +35,7 @@ const (
 	maxSleep                   = 2 * time.Second
 	decayConstant              = 1 // bigger for slower decay, exponential
 	defaultChunkSize           = 48 * fs.Mebi
-	defaultRateLimitSleep      = 60 * time.Second
-)
+	defaultRateLimitSleep      = 60 * time.Second )
 
 var (
 	// Description of how to auth for this app

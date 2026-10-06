@@ -5,13 +5,12 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/rclone/rclone/backend/hasher"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/fstest/fstests"
-	"github.com/rclone/rclone/lib/kv"
+	"github.com/takebox/rclone/backend/hasher"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/fstest/fstests"
+	"github.com/takebox/rclone/lib/kv"
 
-	_ "github.com/rclone/rclone/backend/all" // for integration tests
-)
+	_ "github.com/takebox/rclone/backend/all" // for integration tests )
 
 // TestIntegration runs integration tests against the remote
 func TestIntegration(t *testing.T) {

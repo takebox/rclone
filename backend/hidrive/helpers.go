@@ -20,13 +20,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/backend/hidrive/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/lib/ranges"
-	"github.com/rclone/rclone/lib/readers"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/hidrive/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/lib/ranges"
+	"github.com/takebox/rclone/lib/readers"
+	"github.com/takebox/rclone/lib/rest"
 	"golang.org/x/sync/errgroup"
 	"golang.org/x/sync/semaphore"
 )
@@ -36,8 +36,7 @@ const (
 	// a single upload-operation will support.
 	MaximumUploadBytes = 2147483647 // = 2GiB - 1
 	// iterationChunkSize represents the chunk size used to iterate directory contents.
-	iterationChunkSize = 5000
-)
+	iterationChunkSize = 5000 )
 
 var (
 	// retryErrorCodes is a slice of error codes that we will always retry.
@@ -63,8 +62,7 @@ const (
 	NoMembers        MemberType = "none"
 	DirectoryMembers MemberType = api.HiDriveObjectTypeDirectory
 	FileMembers      MemberType = api.HiDriveObjectTypeFile
-	SymlinkMembers   MemberType = api.HiDriveObjectTypeSymlink
-)
+	SymlinkMembers   MemberType = api.HiDriveObjectTypeSymlink )
 
 // SortByField represents possible fields to sort entries of a directory by.
 type SortByField string
@@ -79,8 +77,7 @@ const (
 	SortByNameDescending       SortByField = SortByField(descendingSort) + SortByName
 	SortByModTimeDescending    SortByField = SortByField(descendingSort) + SortByModTime
 	SortByObjectTypeDescending SortByField = SortByField(descendingSort) + SortByObjectType
-	SortBySizeDescending       SortByField = SortByField(descendingSort) + SortBySize
-)
+	SortBySizeDescending       SortByField = SortByField(descendingSort) + SortBySize )
 
 var (
 	// Unsorted disables sorting and can therefore not be combined with other values.
@@ -97,8 +94,7 @@ type CopyOrMoveOperationType int
 const (
 	MoveOriginal CopyOrMoveOperationType = iota
 	CopyOriginal
-	CopyOriginalPreserveModTime
-)
+	CopyOriginalPreserveModTime )
 
 // OnExistAction represents possible actions the API should take,
 // when a request tries to create a path that already exists.
@@ -618,8 +614,7 @@ func (f *Fs) uploadFileChunked(ctx context.Context, path string, content io.Read
 func (f *Fs) updateFileChunked(ctx context.Context, path string, content io.Reader, offset uint64, chunkSize int, transferLimit int64) (okSize uint64, err error) {
 	var (
 		okChunksMu sync.Mutex // protects the variables below
-		okChunks   []ranges.Range
-	)
+		okChunks   []ranges.Range )
 	g, gCtx := errgroup.WithContext(ctx)
 	transferSemaphore := semaphore.NewWeighted(transferLimit)
 

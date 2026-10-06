@@ -36,13 +36,13 @@ import (
 	"slices"
 
 	"github.com/go-git/go-billy/v5"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/vfs/vfscache"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/log"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/fs/walk"
+	"github.com/takebox/rclone/vfs/vfscache"
+	"github.com/takebox/rclone/vfs/vfscommon"
 )
 
 //go:embed vfs.md
@@ -310,8 +310,7 @@ func (vfs *VFS) Stats() (out rc.Params) {
 
 	var (
 		dirs  int
-		files int
-	)
+		files int )
 	vfs.root.walk(func(d *Dir) {
 		dirs++
 		files += len(d.items)

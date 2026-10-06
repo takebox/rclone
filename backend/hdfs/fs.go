@@ -16,11 +16,11 @@ import (
 	krb "github.com/jcmturner/gokrb5/v8/client"
 	"github.com/jcmturner/gokrb5/v8/config"
 	"github.com/jcmturner/gokrb5/v8/credentials"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/pacer"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/pacer"
 )
 
 // Fs represents a HDFS server
@@ -37,8 +37,7 @@ type Fs struct {
 const (
 	minSleep      = 20 * time.Millisecond
 	maxSleep      = 10 * time.Second
-	decayConstant = 2 // bigger for slower decay, exponential
-)
+	decayConstant = 2 // bigger for slower decay, exponential )
 
 // copy-paste from https://github.com/colinmarc/hdfs/blob/master/cmd/hdfs/kerberos.go
 func getKerberosClient() (*krb.Client, error) {

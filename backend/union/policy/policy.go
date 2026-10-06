@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/backend/union/upstream"
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/backend/union/upstream"
+	"github.com/takebox/rclone/fs"
 )
 
 var policies = make(map[string]Policy)

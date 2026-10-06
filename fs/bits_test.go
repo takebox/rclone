@@ -15,8 +15,7 @@ type bits = Bits[bitsChoices]
 const (
 	bitA bits = 1 << iota
 	bitB
-	bitC
-)
+	bitC )
 
 type bitsChoices struct{}
 

@@ -8,16 +8,15 @@ import (
 	"io"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/pool"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/lib/pool"
+	"github.com/takebox/rclone/lib/readers"
 )
 
 const (
 	// BufferSize is the default size of the async buffer
 	BufferSize       = pool.BufferSize
-	softStartInitial = 4 * 1024
-)
+	softStartInitial = 4 * 1024 )
 
 // ErrorStreamAbandoned is returned when the input is closed before the end of the stream
 var ErrorStreamAbandoned = errors.New("stream abandoned")

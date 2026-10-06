@@ -10,7 +10,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 var (
@@ -20,8 +20,7 @@ var (
 	exitOnce     sync.Once
 	registerOnce sync.Once
 	signalled    atomic.Int32
-	runCalled    atomic.Int32
-)
+	runCalled    atomic.Int32 )
 
 // FnHandle is the type of the handle returned by function `Register`
 // that can be used to unregister an at-exit function

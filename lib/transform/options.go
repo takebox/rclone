@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 type transform struct {
@@ -23,8 +23,7 @@ type tag int
 const (
 	file tag = iota // Only transform the leaf name of files (default)
 	dir             // Only transform name of directories - these may appear anywhere in the path
-	all             // Transform the entire path for files and directories
-)
+	all             // Transform the entire path for files and directories )
 
 // Transforming returns true when transforms are in use
 func Transforming(ctx context.Context) bool {
@@ -46,8 +45,7 @@ func SetOptions(ctx context.Context, s ...string) (err error) {
 var (
 	cachedNameTransform []string
 	cachedOpt           []transform
-	cacheLock           sync.Mutex
-)
+	cacheLock           sync.Mutex )
 
 // getOptions sets the options from flags passed in.
 func getOptions(ctx context.Context) (opt []transform, err error) {
@@ -213,8 +211,7 @@ const (
 	ConvASCII
 	ConvURL
 	ConvRegex
-	ConvCommand
-)
+	ConvCommand )
 
 type transformChoices struct{}
 

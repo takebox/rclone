@@ -7,21 +7,19 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/pacer"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/lib/pacer"
 )
 
 const (
 	minSleep      = 100 * time.Millisecond
 	maxSleep      = 10 * time.Second
-	decayConstant = 2 // bigger for slower decay, exponential
-)
+	decayConstant = 2 // bigger for slower decay, exponential )
 
 // Use only one pacer per server URL
 var (
 	pacers     map[string]*fs.Pacer
-	pacerMutex sync.Mutex
-)
+	pacerMutex sync.Mutex )
 
 func init() {
 	pacers = make(map[string]*fs.Pacer, 0)

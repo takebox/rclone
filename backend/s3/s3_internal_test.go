@@ -16,14 +16,14 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go-v2/service/s3/types"
 	"github.com/aws/smithy-go"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/fstest/fstests"
-	"github.com/rclone/rclone/lib/bucket"
-	"github.com/rclone/rclone/lib/random"
-	"github.com/rclone/rclone/lib/version"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/fstest/fstests"
+	"github.com/takebox/rclone/lib/bucket"
+	"github.com/takebox/rclone/lib/random"
+	"github.com/takebox/rclone/lib/version"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -396,8 +396,7 @@ func (f *Fs) InternalTestVersions(t *testing.T) {
 
 		var (
 			firstObjectTime  = obj.(*Object).lastModified
-			secondObjectTime = newObj.(*Object).lastModified
-		)
+			secondObjectTime = newObj.(*Object).lastModified )
 
 		for _, test := range []struct {
 			what     string

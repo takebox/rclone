@@ -4,11 +4,10 @@
 
 package local
 
-import "github.com/rclone/rclone/fs"
+import "github.com/takebox/rclone/fs"
 
 const (
-	xattrSupported = false
-)
+	xattrSupported = false )
 
 // getXattr returns the extended attributes for an object
 func (o *Object) getXattr() (metadata fs.Metadata, err error) {

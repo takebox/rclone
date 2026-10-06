@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/lib/random"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/lib/random"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -287,8 +287,7 @@ func TestWriteFileHandleRelease(t *testing.T) {
 
 var (
 	canSetModTimeOnce  sync.Once
-	canSetModTimeValue = true
-)
+	canSetModTimeValue = true )
 
 // returns whether the remote can set modtime
 func canSetModTime(t *testing.T, r *fstest.Run) bool {

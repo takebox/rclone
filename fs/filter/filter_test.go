@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fstest/mockobject"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fstest/mockobject"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -773,7 +773,7 @@ five
 	})
 	require.NoError(t, err)
 	if raw {
-		assert.Equal(t, "; comment,one,# another comment,,,two, # indented comment,three  ,four    ,five,  six  ",
+		assert.Equal(t, "; comment,one,# another comment,,,two, # indented comment,three ,four ,five,  six  ",
 			strings.Join(lines, ","))
 	} else {
 		assert.Equal(t, "one,two,three,four,five,six", strings.Join(lines, ","))

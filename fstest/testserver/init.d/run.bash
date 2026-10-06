@@ -2,16 +2,12 @@
 
 case "$1" in 
     start)
-	start
-	;;
+	start ;;
     stop)
-	stop
-	;;
+	stop ;;
     status)
-	status
-	;;
+	status ;;
     *)
 	echo "usage: $0 start|stop|status" >&2
-	exit 1
-	;;
+	exit 1 ;;
 esac

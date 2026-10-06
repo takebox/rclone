@@ -12,12 +12,12 @@ import (
 	"os/exec"
 	"testing"
 
-	_ "github.com/rclone/rclone/backend/all"
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/cmd/serve/servetest"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/fstest"
+	_ "github.com/takebox/rclone/backend/all"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/cmd/serve/servetest"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/fstest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

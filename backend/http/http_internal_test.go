@@ -16,11 +16,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configfile"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configfile"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/lib/rest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -30,8 +30,7 @@ var (
 	testPath    = "test"
 	filesPath   = filepath.Join(testPath, "files")
 	headers     = []string{"X-Potato", "sausage", "X-Rhubarb", "cucumber"}
-	lineEndSize = 1
-)
+	lineEndSize = 1 )
 
 // prepareServer prepares the test server and shuts it down automatically
 // when the test completes.

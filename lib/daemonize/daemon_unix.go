@@ -9,7 +9,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 	"golang.org/x/sys/unix"
 )
 

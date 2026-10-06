@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/fstest/mockobject"
+	"github.com/takebox/rclone/fstest/mockobject"
 	"github.com/stretchr/testify/assert"
 )
 

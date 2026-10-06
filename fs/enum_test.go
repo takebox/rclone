@@ -24,8 +24,7 @@ type choice = Enum[choices]
 const (
 	choiceA choice = iota
 	choiceB
-	choiceC
-)
+	choiceC )
 
 // Check it satisfies the interfaces
 var (

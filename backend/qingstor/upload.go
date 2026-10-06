@@ -14,8 +14,8 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/atexit"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/lib/atexit"
 	qs "github.com/yunify/qingstor-sdk-go/v3/service"
 )
 
@@ -23,8 +23,7 @@ const (
 	// maxSinglePartSize = 1024 * 1024 * 1024 * 5 // The maximum allowed size when uploading a single object to QingStor
 	// maxMultiPartSize = 1024 * 1024 * 1024 * 1 // The maximum allowed part size when uploading a part to QingStor
 	minMultiPartSize = 1024 * 1024 * 4 // The minimum allowed part size when uploading a part to QingStor
-	maxMultiParts    = 10000           // The maximum allowed number of parts in a multi-part upload
-)
+	maxMultiParts    = 10000           // The maximum allowed number of parts in a multi-part upload )
 
 const (
 	defaultUploadPartSize    = 1024 * 1024 * 64 // The default part size to buffer chunks of a payload into.

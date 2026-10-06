@@ -8,11 +8,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/operations"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/operations"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 )
@@ -165,8 +165,7 @@ the |source:path| must point to a text file in the SUM format.
 			fsrc, fdst fs.Fs
 			hashType   hash.Type
 			fsum       fs.Fs
-			sumFile    string
-		)
+			sumFile    string )
 		if checkFileHashType != "" {
 			if err := hashType.Set(checkFileHashType); err != nil {
 				fmt.Println(hash.HelpString(0))

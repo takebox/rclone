@@ -12,11 +12,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/lib/diskusage"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/lib/diskusage"
 )
 
 func init() {
@@ -243,8 +243,7 @@ func init() {
 func rcSingleCommand(ctx context.Context, in rc.Params, name string, noRemote bool) (out rc.Params, err error) {
 	var (
 		f      fs.Fs
-		remote string
-	)
+		remote string )
 	if noRemote {
 		f, err = rc.GetFs(ctx, in)
 	} else {

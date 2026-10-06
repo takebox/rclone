@@ -7,11 +7,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/cmd/bisync/bilib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/terminal"
-	"github.com/rclone/rclone/lib/transform"
+	"github.com/takebox/rclone/cmd/bisync/bilib"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/terminal"
+	"github.com/takebox/rclone/lib/transform"
 )
 
 // Prefer describes strategies for resolving sync conflicts
@@ -25,8 +25,7 @@ const (
 	PreferNewer
 	PreferOlder
 	PreferLarger
-	PreferSmaller
-)
+	PreferSmaller )
 
 type preferChoices struct{}
 
@@ -57,8 +56,7 @@ const (
 	ConflictLoserSkip     ConflictLoserAction = iota // Reserved as zero but currently unused
 	ConflictLoserNumber                              // file.conflict1, file.conflict2, file.conflict3, etc.
 	ConflictLoserPathname                            // file.path1, file.path2
-	ConflictLoserDelete                              // delete the loser, keep winner only
-)
+	ConflictLoserDelete                              // delete the loser, keep winner only )
 
 type conflictLoserChoices struct{}
 

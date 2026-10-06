@@ -49,16 +49,16 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/storage/azfile/fileerror"
 	"github.com/Azure/azure-sdk-for-go/sdk/storage/azfile/service"
 	"github.com/Azure/azure-sdk-for-go/sdk/storage/azfile/share"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/env"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/env"
+	"github.com/takebox/rclone/lib/readers"
 )
 
 const (
@@ -430,8 +430,7 @@ func newFsFromOptions(ctx context.Context, name, root string, opt *Options) (fs.
 		cred          azcore.TokenCredential
 		sharedKeyCred *service.SharedKeyCredential
 		client        *service.Client
-		err           error
-	)
+		err           error )
 	switch {
 	case opt.EnvAuth:
 		// Read account from environment if needed

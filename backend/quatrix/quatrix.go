@@ -20,19 +20,19 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/backend/quatrix/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/dircache"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/multipart"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/quatrix/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/dircache"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/multipart"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 const (
@@ -42,8 +42,7 @@ const (
 	rootURL       = "https://%s/api/1.0/"
 	uploadURL     = "https://%s/upload/chunked/"
 
-	unlimitedUserQuota = -1
-)
+	unlimitedUserQuota = -1 )
 
 func init() {
 	fs.Register(&fs.RegInfo{
@@ -905,8 +904,7 @@ func (f *Fs) About(ctx context.Context) (usage *fs.Usage, err error) {
 	}
 	var (
 		user api.ProfileInfo
-		resp *http.Response
-	)
+		resp *http.Response )
 
 	err = f.pacer.Call(func() (bool, error) {
 		resp, err = f.srv.CallJSON(ctx, &opts, nil, &user)
@@ -1114,8 +1112,7 @@ func (o *Object) dynamicUpload(ctx context.Context, size int64, modTime time.Tim
 	uploadSession *api.UploadLinkResponse, options ...fs.OpenOption) error {
 	var (
 		speed      float64
-		localChunk int64
-	)
+		localChunk int64 )
 
 	defer o.fs.uploadMemoryManager.Return(o.id)
 

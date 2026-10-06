@@ -16,7 +16,7 @@ import (
 	"hash"
 	"io"
 
-	"github.com/rclone/rclone/backend/hidrive/hidrivehash/internal"
+	"github.com/takebox/rclone/backend/hidrive/hidrivehash/internal"
 )
 
 const (
@@ -25,8 +25,7 @@ const (
 	// Size of the checksum in bytes.
 	Size = sha1.Size
 	// sumsPerLevel is the number of checksums
-	sumsPerLevel = 256
-)
+	sumsPerLevel = 256 )
 
 var (
 	// zeroSum is a special hash consisting of 20 null-bytes.

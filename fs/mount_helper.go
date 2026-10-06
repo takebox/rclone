@@ -185,8 +185,7 @@ func parseHelperOptionString(optString string) (opts []string, err error) {
 		stateValue
 		stateQuotedValue
 		stateAfterQuote
-		stateDone
-	)
+		stateDone )
 	var (
 		state   = stateParam // current state of parser
 		i       int          // position in path
@@ -194,8 +193,7 @@ func parseHelperOptionString(optString string) (opts []string, err error) {
 		c       rune         // current rune under consideration
 		quote   rune         // kind of quote to end this quoted string
 		param   string       // current parameter value
-		doubled bool         // set if had doubled quotes
-	)
+		doubled bool         // set if had doubled quotes )
 	for i, c = range optString + "," {
 		switch state {
 		// Parses param= and param2=

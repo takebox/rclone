@@ -9,15 +9,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
 type (
 	Result string
-	Item   string
-)
+	Item   string )
 
 func TestBatcherNew(t *testing.T) {
 	ctx := context.Background()

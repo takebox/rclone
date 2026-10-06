@@ -2,7 +2,7 @@
 package vfscommon
 
 import (
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 type cacheModeChoices struct{}
@@ -24,8 +24,7 @@ const (
 	CacheModeOff     CacheMode = iota // cache nothing - return errors for writes which can't be satisfied
 	CacheModeMinimal                  // cache only the minimum, e.g. read/write opens
 	CacheModeWrites                   // cache all files opened with write intent
-	CacheModeFull                     // cache all files opened in any mode
-)
+	CacheModeFull                     // cache all files opened in any mode )
 
 // Type of the value
 func (cacheModeChoices) Type() string {

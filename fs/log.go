@@ -32,8 +32,7 @@ const (
 	LogLevelNotice // Normal logging, -q suppresses
 	LogLevelInfo   // Transfers, needs -v
 	LogLevelDebug  // Debug level, needs -vv
-	LogLevelOff
-)
+	LogLevelOff )
 
 type logLevelChoices struct{}
 
@@ -68,8 +67,7 @@ const (
 	SlogLevelCritical  = slog.Level(12) // More severe than Error
 	SlogLevelAlert     = slog.Level(16) // More severe than Critical
 	SlogLevelEmergency = slog.Level(20) // Most severe
-	SlogLevelOff       = slog.Level(24) // A very high value
-)
+	SlogLevelOff       = slog.Level(24) // A very high value )
 
 // Map our level numbers to slog level numbers
 var levelToSlog = []slog.Level{

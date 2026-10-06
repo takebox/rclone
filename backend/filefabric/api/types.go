@@ -166,8 +166,7 @@ type ItemType uint8
 // Types of things in Item
 const (
 	ItemTypeFile   ItemType = 0
-	ItemTypeFolder ItemType = 1
-)
+	ItemTypeFolder ItemType = 1 )
 
 // Item ia a File or a Folder
 type Item struct {

@@ -13,22 +13,21 @@ import (
 
 	"github.com/anacrolix/dms/soap"
 
-	"github.com/rclone/rclone/cmd/serve/servetest"
-	"github.com/rclone/rclone/fs/config/configfile"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/vfs"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/cmd/serve/servetest"
+	"github.com/takebox/rclone/fs/config/configfile"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/vfs"
+	"github.com/takebox/rclone/vfs/vfscommon"
 
-	_ "github.com/rclone/rclone/backend/local"
-	"github.com/rclone/rclone/fs"
+	_ "github.com/takebox/rclone/backend/local"
+	"github.com/takebox/rclone/fs"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
 var (
 	dlnaServer *server
-	baseURL    string
-)
+	baseURL    string )
 
 const (
 	testBindAddress = "localhost:0"
@@ -102,7 +101,7 @@ func TestServeContent(t *testing.T) {
 
 // Check that ContentDirectory#Browse returns appropriate metadata on the root container.
 func TestContentDirectoryBrowseMetadata(t *testing.T) {
-	// Sample from: https://github.com/rclone/rclone/issues/3253#issuecomment-524317469
+	// Sample from: https://github.com/takebox/rclone/issues/3253#issuecomment-524317469
 	req, err := http.NewRequest("POST", baseURL+serviceControlURL, strings.NewReader(`
 <?xml version="1.0" encoding="utf-8"?>
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"

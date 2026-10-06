@@ -11,10 +11,10 @@ import (
 	"testing"
 	"time"
 
-	_ "github.com/rclone/rclone/backend/all" // import all the backends
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	_ "github.com/takebox/rclone/backend/all" // import all the backends
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/vfs/vfscommon"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -29,8 +29,7 @@ var (
 // Constants uses in the tests
 const (
 	writeBackDelay      = fs.Duration(100 * time.Millisecond) // A short writeback delay for testing
-	waitForWritersDelay = 30 * time.Second                    // time to wait for existing writers
-)
+	waitForWritersDelay = 30 * time.Second                    // time to wait for existing writers )
 
 // TestMain drives the tests
 func TestMain(m *testing.M) {

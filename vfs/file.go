@@ -14,10 +14,10 @@ import (
 
 	"slices"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/log"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/vfs/vfscommon"
 )
 
 // The File object is tightly coupled to the Dir object. Since they
@@ -834,8 +834,7 @@ func (f *File) Open(flags int) (fd Handle, err error) {
 	var (
 		write    bool // if set need write support
 		read     bool // if set need read support
-		rdwrMode = flags & accessModeMask
-	)
+		rdwrMode = flags & accessModeMask )
 
 	// If this is a symlink, then resolve it
 	if f.IsSymlink() && flags&o_SYMLINK == 0 {

@@ -10,9 +10,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/flags"
 	"github.com/spf13/pflag"
 )
 
@@ -34,8 +34,7 @@ var (
 	uploadHeaders   []string
 	downloadHeaders []string
 	headers         []string
-	metadataSet     []string
-)
+	metadataSet     []string )
 
 // AddFlags adds the non filing system specific flags to the command
 func AddFlags(ci *fs.ConfigInfo, flagSet *pflag.FlagSet) {

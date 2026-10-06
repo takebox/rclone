@@ -12,14 +12,14 @@ import (
 	"time"
 
 	"github.com/a8m/tree"
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/dirtree"
-	"github.com/rclone/rclone/fs/log"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/terminal"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/dirtree"
+	"github.com/takebox/rclone/fs/log"
+	"github.com/takebox/rclone/fs/walk"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/terminal"
 	"github.com/spf13/cobra"
 )
 
@@ -28,8 +28,7 @@ var (
 	outFileName string
 	noReport    bool
 	sort        string
-	enc         = encoder.OS
-)
+	enc         = encoder.OS )
 
 func init() {
 	cmd.Root.AddCommand(commandDefinition)

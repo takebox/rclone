@@ -39,26 +39,26 @@ import (
 	smithyhttp "github.com/aws/smithy-go/transport/http"
 	"github.com/ncw/swift/v2"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/chunksize"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/list"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/bucket"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/multipart"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/pool"
-	"github.com/rclone/rclone/lib/readers"
-	"github.com/rclone/rclone/lib/rest"
-	"github.com/rclone/rclone/lib/version"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/chunksize"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/list"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/bucket"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/multipart"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/pool"
+	"github.com/takebox/rclone/lib/readers"
+	"github.com/takebox/rclone/lib/rest"
+	"github.com/takebox/rclone/lib/version"
 	"golang.org/x/net/http/httpguts"
 	"golang.org/x/sync/errgroup"
 )
@@ -72,7 +72,7 @@ import (
 // function and set the correct quirks. Test the quirks are correct by
 // running the integration tests "go test -v -remote NewS3Provider:".
 //
-// See https://github.com/rclone/rclone/blob/master/CONTRIBUTING.md#adding-a-new-s3-provider
+// See https://github.com/takebox/rclone/blob/master/CONTRIBUTING.md#adding-a-new-s3-provider
 // for full information about how to add a new s3 provider.
 var providerOption = fs.Option{
 	Name: fs.ConfigProvider,
@@ -2716,7 +2716,7 @@ There is currently an unsolved issue with the s3 (specifically minio) backend
 and HTTP/2.  HTTP/2 is enabled by default for the s3 backend but can be
 disabled here.  When the issue is solved this flag will be removed.
 
-See: https://github.com/rclone/rclone/issues/4673, https://github.com/rclone/rclone/issues/3631
+See: https://github.com/takebox/rclone/issues/4673, https://github.com/takebox/rclone/issues/3631
 
 `,
 		}, {
@@ -3010,8 +3010,7 @@ const (
 	defaultUploadCutoff = fs.SizeSuffix(200 * 1024 * 1024)
 	maxUploadCutoff     = fs.SizeSuffix(5 * 1024 * 1024 * 1024)
 	minSleep            = 10 * time.Millisecond           // In case of error, start at 10ms sleep.
-	maxExpireDuration   = fs.Duration(7 * 24 * time.Hour) // max expiry is 1 week
-)
+	maxExpireDuration   = fs.Duration(7 * 24 * time.Hour) // max expiry is 1 week )
 
 type (
 	sdkLogMode        = fs.Bits[sdkLogModeChoices]
@@ -3648,8 +3647,7 @@ func setQuirks(opt *Options) {
 		useMultipartUploads   = true // Set if provider supports multipart uploads
 		useUnsignedPayload    = true // Do we need to use unsigned payloads to avoid seeking in PutObject
 		useXID                = true // Add x-id URL parameter into requests
-		signAcceptEncoding    = true // If we should include AcceptEncoding in the signature
-	)
+		signAcceptEncoding    = true // If we should include AcceptEncoding in the signature )
 	switch opt.Provider {
 	case "AWS":
 		// No quirks
@@ -3756,7 +3754,7 @@ func setQuirks(opt *Options) {
 		useAlreadyExists = false
 		// useMultipartUploads = false - set this manually
 		// rclone serve doesn't support multi-part server side copy:
-		// See: https://github.com/rclone/rclone/issues/7454
+		// See: https://github.com/takebox/rclone/issues/7454
 		// So make cutoff very large which it does support
 		opt.CopyCutoff = math.MaxInt64
 	case "Scaleway":
@@ -3816,7 +3814,7 @@ func setQuirks(opt *Options) {
 		virtualHostStyle = false
 	case "GCS":
 		// Google break request Signature by mutating accept-encoding HTTP header
-		// https://github.com/rclone/rclone/issues/6670
+		// https://github.com/takebox/rclone/issues/6670
 		useAcceptEncodingGzip = false
 		signAcceptEncoding = false
 		useAlreadyExists = true // returns BucketNameUnavailable instead of BucketAlreadyExists but good enough!
@@ -4510,7 +4508,7 @@ func (f *Fs) list(ctx context.Context, opt listOpt, fn listFn) error {
 	// it doesn't encode CommonPrefixes.
 	// See: https://tracker.ceph.com/issues/41870
 	//
-	// This does not work under IBM COS also: See https://github.com/rclone/rclone/issues/3345
+	// This does not work under IBM COS also: See https://github.com/takebox/rclone/issues/3345
 	// though maybe it does on some versions.
 	//
 	// This does work with minio but was only added relatively recently
@@ -5673,8 +5671,7 @@ func (f *Fs) restoreStatus(ctx context.Context, all bool) (out []restoreStatusOu
 func (f *Fs) listMultipartUploads(ctx context.Context, bucket, key string) (uploads []types.MultipartUpload, err error) {
 	var (
 		keyMarker      *string
-		uploadIDMarker *string
-	)
+		uploadIDMarker *string )
 	uploads = []types.MultipartUpload{}
 	for {
 		req := s3.ListMultipartUploadsInput{

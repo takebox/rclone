@@ -14,7 +14,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 // Handler is the standard handler for the logging.
@@ -324,8 +324,7 @@ func (h *OutputHandler) Handle(ctx context.Context, r slog.Record) (err error) {
 	var (
 		bufJSON *bytes.Buffer
 		bufText *bytes.Buffer
-		buf     *bytes.Buffer
-	)
+		buf     *bytes.Buffer )
 
 	// Check whether we need to build Text or JSON logs or both
 	needJSON := h.format&logFormatJSON != 0

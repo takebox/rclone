@@ -11,8 +11,7 @@ type Time time.Time
 
 // For overriding in unittests.
 var (
-	timeNowFunc = time.Now
-)
+	timeNowFunc = time.Now )
 
 // Turn Time into a string
 func (t Time) String() string {

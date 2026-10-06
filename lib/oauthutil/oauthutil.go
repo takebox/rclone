@@ -16,12 +16,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/lib/random"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/lib/random"
 	"github.com/skratchdot/open-golang/open"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
@@ -29,8 +29,7 @@ import (
 
 var (
 	// templateString is the template used in the authorization webserver
-	templateString string
-)
+	templateString string )
 
 const (
 	// TitleBarRedirectURL is the OAuth2 redirect URL to use when the authorization
@@ -310,8 +309,7 @@ func (ts *TokenSource) Token() (*oauth2.Token, error) {
 	var (
 		token   *oauth2.Token
 		err     error
-		changed = false
-	)
+		changed = false )
 	const maxTries = 5
 
 	// If we have a cached valid token, use that

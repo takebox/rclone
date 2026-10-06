@@ -8,9 +8,9 @@ import (
 	"path"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/fs/operations"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/fs/operations"
 )
 
 // obtain hash for an object
@@ -193,8 +193,7 @@ func (f *Fs) Put(ctx context.Context, in io.Reader, src fs.ObjectInfo, options .
 		o      fs.Object
 		common hash.Set
 		rehash bool
-		hashes hashMap
-	)
+		hashes hashMap )
 	if fsrc := src.Fs(); fsrc != nil {
 		common = fsrc.Hashes().Overlap(f.keepHashes)
 		// Rehash if source does not have all required hashes or hashing is slow

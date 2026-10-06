@@ -6,9 +6,9 @@ package nfs
 import (
 	"testing"
 
-	_ "github.com/rclone/rclone/backend/local"
-	"github.com/rclone/rclone/cmd/serve/servetest"
-	"github.com/rclone/rclone/fs/rc"
+	_ "github.com/takebox/rclone/backend/local"
+	"github.com/takebox/rclone/cmd/serve/servetest"
+	"github.com/takebox/rclone/fs/rc"
 )
 
 func TestRc(t *testing.T) {

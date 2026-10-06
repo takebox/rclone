@@ -25,19 +25,19 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/backend/webdav/api"
-	"github.com/rclone/rclone/backend/webdav/odrvcookie"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/webdav/api"
+	"github.com/takebox/rclone/backend/webdav/odrvcookie"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/rest"
 
 	ntlmssp "github.com/Azure/go-ntlmssp"
 )
@@ -46,8 +46,7 @@ const (
 	minSleep      = fs.Duration(10 * time.Millisecond)
 	maxSleep      = 2 * time.Second
 	decayConstant = 2   // bigger for slower decay, exponential
-	defaultDepth  = "1" // depth for PROPFIND
-)
+	defaultDepth  = "1" // depth for PROPFIND )
 
 const defaultEncodingSharepointNTLM = (encoder.EncodeWin |
 	encoder.EncodeHashPercent | // required by IIS/8.5 in contrast with onedrive which doesn't need it

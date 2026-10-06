@@ -17,20 +17,20 @@ import (
 	"time"
 
 	"github.com/jlaffaye/ftp"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/env"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/proxy"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/env"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/proxy"
+	"github.com/takebox/rclone/lib/readers"
 )
 
 var (
@@ -40,8 +40,7 @@ var (
 const (
 	minSleep      = 10 * time.Millisecond
 	maxSleep      = 2 * time.Second
-	decayConstant = 2 // bigger for slower decay, exponential
-)
+	decayConstant = 2 // bigger for slower decay, exponential )
 
 // Register with Fs
 func init() {
@@ -405,7 +404,7 @@ func shouldRetry(ctx context.Context, err error) (bool, error) {
 //
 // We can't share session caches between connections.
 //
-// See: https://github.com/rclone/rclone/issues/7234
+// See: https://github.com/takebox/rclone/issues/7234
 func (f *Fs) tlsConfig() *tls.Config {
 	var tlsConfig *tls.Config
 	if f.opt.TLS || f.opt.ExplicitTLS {
@@ -488,7 +487,7 @@ func (f *Fs) ftpConnection(ctx context.Context) (c *ftp.ServerConn, err error) {
 		tlsConn := tls.Client(conn, tlsConfig)
 		// Do the initial handshake - tls.Client doesn't do it for us
 		// If we do this then connections to proftpd/pureftpd lock up
-		// See: https://github.com/rclone/rclone/issues/6426
+		// See: https://github.com/takebox/rclone/issues/6426
 		// See: https://github.com/jlaffaye/ftp/issues/282
 		if false {
 			err = tlsConn.HandshakeContext(ctx)
@@ -1287,7 +1286,7 @@ func (f *ftpReadCloser) Close() error {
 	}
 	// mask the error if it was caused by a premature close
 	// NB StatusAboutToSend is to work around a bug in pureftpd
-	// See: https://github.com/rclone/rclone/issues/3445#issuecomment-521654257
+	// See: https://github.com/takebox/rclone/issues/3445#issuecomment-521654257
 	if errX := textprotoError(err); errX != nil {
 		switch errX.Code {
 		case ftp.StatusTransfertAborted, ftp.StatusFileUnavailable, ftp.StatusAboutToSend:
@@ -1317,8 +1316,7 @@ func (o *Object) Open(ctx context.Context, options ...fs.OpenOption) (rc io.Read
 
 	var (
 		fd *ftp.Response
-		c  *ftp.ServerConn
-	)
+		c  *ftp.ServerConn )
 	err = o.fs.pacer.Call(func() (bool, error) {
 		c, err = o.fs.getFtpConnection(ctx)
 		if err != nil {

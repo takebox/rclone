@@ -10,18 +10,17 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/backend/onedrive/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/lib/dircache"
-	"github.com/rclone/rclone/lib/errcount"
+	"github.com/takebox/rclone/backend/onedrive/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/lib/dircache"
+	"github.com/takebox/rclone/lib/errcount"
 )
 
 const (
 	dirMimeType   = "inode/directory"
 	timeFormatIn  = time.RFC3339
-	timeFormatOut = "2006-01-02T15:04:05.999Z" // mS for OneDrive Personal, otherwise only S
-)
+	timeFormatOut = "2006-01-02T15:04:05.999Z" // mS for OneDrive Personal, otherwise only S )
 
 // system metadata keys which this backend owns
 var systemMetadataInfo = map[string]fs.MetadataHelp{
@@ -144,8 +143,7 @@ const (
 	rwRead rwChoice = 1 << iota
 	rwWrite
 	rwFailOK
-	rwOff rwChoice = 0
-)
+	rwOff rwChoice = 0 )
 
 // Examples for the options
 var rwExamples = fs.OptionExamples{{
@@ -407,7 +405,7 @@ func (m *Metadata) WritePermissions(ctx context.Context) (err error) {
 // When all of the above are true, Graph indicates it has added the
 // user permission, but it immediately drops it
 //
-// See: https://github.com/rclone/rclone/issues/8465
+// See: https://github.com/takebox/rclone/issues/8465
 func (m *Metadata) orderPermissions(xs []*api.PermissionsType) {
 	// Return true if identity has any user permissions
 	hasUserIdentity := func(identity *api.IdentitySet) bool {

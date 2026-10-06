@@ -52,8 +52,7 @@ func CopyFile(src, dst string) (err error) {
 	var (
 		rd   io.ReadCloser
 		wr   io.WriteCloser
-		info os.FileInfo
-	)
+		info os.FileInfo )
 	if info, err = os.Stat(src); err != nil {
 		return
 	}

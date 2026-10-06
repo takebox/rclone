@@ -10,12 +10,12 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/dirtree"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/list"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/lib/transform"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/dirtree"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/list"
+	"github.com/takebox/rclone/fs/walk"
+	"github.com/takebox/rclone/lib/transform"
 	"golang.org/x/text/unicode/norm"
 )
 
@@ -133,8 +133,7 @@ func (m *March) makeListDir(ctx context.Context, f fs.Fs, includeAll bool, keyFn
 		mu      sync.Mutex
 		started bool
 		dirs    dirtree.DirTree
-		dirsErr error
-	)
+		dirsErr error )
 	return func(dir string, callback fs.ListRCallback) (err error) {
 		mu.Lock()
 		if !started {
@@ -293,8 +292,7 @@ func (m *March) matchListings(srcChan, dstChan <-chan fs.DirEntry, srcOnly, dstO
 		srcPrevName, dstPrevName string
 		src, dst                 fs.DirEntry
 		srcHasMore, dstHasMore   = true, true
-		srcName, dstName         string
-	)
+		srcName, dstName         string )
 	srcDone := func() {
 		srcPrevName = srcName
 		srcPrev = src

@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/filter"
-	"github.com/rclone/rclone/fs/rc"
-	"github.com/rclone/rclone/fstest/testy"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/filter"
+	"github.com/takebox/rclone/fs/rc"
+	"github.com/takebox/rclone/fstest/testy"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -131,8 +131,7 @@ var ctxParmFn = func(paramCtx context.Context, returnError bool) func(ctx contex
 
 const (
 	sleepTime      = 100 * time.Millisecond
-	floatSleepTime = float64(sleepTime) / 1e9 / 2
-)
+	floatSleepTime = float64(sleepTime) / 1e9 / 2 )
 
 // sleep for some time so job.Duration is non-0
 func sleepJob() {

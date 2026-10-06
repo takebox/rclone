@@ -8,17 +8,16 @@ import (
 	"io"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/multipart"
-	"github.com/rclone/rclone/lib/pool"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/multipart"
+	"github.com/takebox/rclone/lib/pool"
 	"golang.org/x/sync/errgroup"
 )
 
 const (
-	multithreadChunkSize = 64 << 10
-)
+	multithreadChunkSize = 64 << 10 )
 
 // Return a boolean as to whether we should use multi thread copy for
 // this transfer

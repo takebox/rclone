@@ -24,15 +24,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/fshttp"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/dircache"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/fshttp"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/dircache"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/rest"
 )
 
 const (
@@ -41,8 +41,7 @@ const (
 	maxSleep           = 2 * time.Second
 	pacerBurst         = 1
 	linkboxAPIURL      = "https://www.linkbox.to/api/open/"
-	rootID             = "0" // ID of root directory
-)
+	rootID             = "0" // ID of root directory )
 
 func init() {
 	fsi := &fs.RegInfo{
@@ -145,7 +144,7 @@ func NewFs(ctx context.Context, name, root string, m configmap.Mapper) (fs.Fs, e
 		f.features.Fill(ctx, &tempF)
 		// XXX: update the old f here instead of returning tempF, since
 		// `features` were already filled with functions having *f as a receiver.
-		// See https://github.com/rclone/rclone/issues/2182
+		// See https://github.com/takebox/rclone/issues/2182
 		f.dirCache = tempF.dirCache
 		f.root = tempF.root
 		// return an error with an fs which points to the parent
@@ -232,8 +231,7 @@ var searchOK = regexp.MustCompile(`^[a-zA-Z0-9_ -.]{1,50}$`)
 func (f *Fs) listAll(ctx context.Context, dirID string, name string, fn listAllFn) (found bool, err error) {
 	var (
 		pageNumber       = 0
-		numberOfEntities = maxEntitiesPerPage
-	)
+		numberOfEntities = maxEntitiesPerPage )
 	name = strings.TrimSpace(name) // search doesn't like spaces
 	if !searchOK.MatchString(name) {
 		// If name isn't good then do an unbounded search

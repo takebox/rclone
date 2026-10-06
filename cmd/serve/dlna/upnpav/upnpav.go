@@ -8,8 +8,7 @@ import (
 
 const (
 	// NoSuchObjectErrorCode : The specified ObjectID is invalid.
-	NoSuchObjectErrorCode = 701
-)
+	NoSuchObjectErrorCode = 701 )
 
 // Resource description
 type Resource struct {

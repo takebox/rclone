@@ -22,16 +22,14 @@ const (
 	Gibi
 	Tebi
 	Pebi
-	Exbi
-)
+	Exbi )
 const (
 	// SizeSuffixMax is the largest SizeSuffix multiplier
 	SizeSuffixMax = Exbi
 	// SizeSuffixMaxValue is the largest value that can be used to create SizeSuffix
 	SizeSuffixMaxValue = math.MaxInt64
 	// SizeSuffixMinValue is the smallest value that can be used to create SizeSuffix
-	SizeSuffixMinValue = math.MinInt64
-)
+	SizeSuffixMinValue = math.MinInt64 )
 
 // Turn SizeSuffix into a string and a suffix
 func (x SizeSuffix) string() (string, string) {

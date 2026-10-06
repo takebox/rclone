@@ -18,11 +18,11 @@ import (
 	"unicode/utf8"
 
 	"github.com/Max-Sum/base32768"
-	"github.com/rclone/rclone/backend/crypt/pkcs7"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/lib/readers"
-	"github.com/rclone/rclone/lib/version"
+	"github.com/takebox/rclone/backend/crypt/pkcs7"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/lib/readers"
+	"github.com/takebox/rclone/lib/version"
 	"github.com/rfjakob/eme"
 	"golang.org/x/crypto/nacl/secretbox"
 	"golang.org/x/crypto/scrypt"
@@ -37,8 +37,7 @@ const (
 	fileHeaderSize      = fileMagicSize + fileNonceSize
 	blockHeaderSize     = secretbox.Overhead
 	blockDataSize       = 64 * 1024
-	blockSize           = blockHeaderSize + blockDataSize
-)
+	blockSize           = blockHeaderSize + blockDataSize )
 
 // Errors returned by cipher
 var (
@@ -83,8 +82,7 @@ type NameEncryptionMode int
 const (
 	NameEncryptionOff NameEncryptionMode = iota
 	NameEncryptionStandard
-	NameEncryptionObfuscated
-)
+	NameEncryptionObfuscated )
 
 // NewNameEncryptionMode turns a string into a NameEncryptionMode
 func NewNameEncryptionMode(s string) (mode NameEncryptionMode, err error) {

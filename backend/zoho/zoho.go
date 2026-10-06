@@ -15,21 +15,21 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/rclone/rclone/lib/encoder"
-	"github.com/rclone/rclone/lib/pacer"
-	"github.com/rclone/rclone/lib/random"
+	"github.com/takebox/rclone/lib/encoder"
+	"github.com/takebox/rclone/lib/pacer"
+	"github.com/takebox/rclone/lib/random"
 
-	"github.com/rclone/rclone/backend/zoho/api"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/configmap"
-	"github.com/rclone/rclone/fs/config/configstruct"
-	"github.com/rclone/rclone/fs/config/obscure"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/fs/hash"
-	"github.com/rclone/rclone/lib/dircache"
-	"github.com/rclone/rclone/lib/oauthutil"
-	"github.com/rclone/rclone/lib/rest"
+	"github.com/takebox/rclone/backend/zoho/api"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/configmap"
+	"github.com/takebox/rclone/fs/config/configstruct"
+	"github.com/takebox/rclone/fs/config/obscure"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/fs/hash"
+	"github.com/takebox/rclone/lib/dircache"
+	"github.com/takebox/rclone/lib/oauthutil"
+	"github.com/takebox/rclone/lib/rest"
 	"golang.org/x/oauth2"
 )
 
@@ -41,8 +41,7 @@ const (
 	decayConstant               = 2 // bigger for slower decay, exponential
 	configRootID                = "root_folder_id"
 
-	defaultUploadCutoff = 10 * 1024 * 1024 // 10 MiB
-)
+	defaultUploadCutoff = 10 * 1024 * 1024 // 10 MiB )
 
 // Globals
 var (

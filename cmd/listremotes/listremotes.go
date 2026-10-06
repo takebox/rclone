@@ -9,11 +9,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/config"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/filter"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/config"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/filter"
 	"github.com/spf13/cobra"
 )
 
@@ -24,8 +24,7 @@ var (
 	filterType        string
 	filterSource      string
 	filterDescription string
-	orderBy           string
-)
+	orderBy           string )
 
 func init() {
 	cmd.Root.AddCommand(commandDefinition)

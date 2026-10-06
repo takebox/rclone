@@ -9,15 +9,15 @@ import (
 	"path"
 	"time"
 
-	"github.com/rclone/rclone/cmd"
-	"github.com/rclone/rclone/cmd/test"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/cache"
-	"github.com/rclone/rclone/fs/config/flags"
-	"github.com/rclone/rclone/fs/operations"
-	"github.com/rclone/rclone/fs/sync"
-	"github.com/rclone/rclone/lib/atexit"
-	"github.com/rclone/rclone/lib/random"
+	"github.com/takebox/rclone/cmd"
+	"github.com/takebox/rclone/cmd/test"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/cache"
+	"github.com/takebox/rclone/fs/config/flags"
+	"github.com/takebox/rclone/fs/operations"
+	"github.com/takebox/rclone/fs/sync"
+	"github.com/takebox/rclone/lib/atexit"
+	"github.com/takebox/rclone/lib/random"
 	"github.com/spf13/cobra"
 )
 
@@ -65,7 +65,7 @@ var speedCmd = &cobra.Command{
 	each subsequent test.
 
 	It is recommended to use -q flag for a simpler output. e.g.:
-	
+
 	    rlone test speed remote: -q
 
 	**NB** This command will create and delete files on the remote in a randomly

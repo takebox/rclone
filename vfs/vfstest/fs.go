@@ -19,19 +19,18 @@ import (
 	"testing"
 	"time"
 
-	_ "github.com/rclone/rclone/backend/all" // import all the backends
-	"github.com/rclone/rclone/cmd/mountlib"
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/walk"
-	"github.com/rclone/rclone/fstest"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	_ "github.com/takebox/rclone/backend/all" // import all the backends
+	"github.com/takebox/rclone/cmd/mountlib"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/walk"
+	"github.com/takebox/rclone/fstest"
+	"github.com/takebox/rclone/vfs/vfscommon"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
 const (
-	waitForWritersDelay = 30 * time.Second // time to wait for existing writers
-)
+	waitForWritersDelay = 30 * time.Second // time to wait for existing writers )
 
 // RunTests runs all the tests against all the VFS cache modes
 //

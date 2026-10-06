@@ -8,13 +8,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/accounting"
-	"github.com/rclone/rclone/fs/asyncreader"
-	"github.com/rclone/rclone/fs/chunkedreader"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/lib/ranges"
-	"github.com/rclone/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/accounting"
+	"github.com/takebox/rclone/fs/asyncreader"
+	"github.com/takebox/rclone/fs/chunkedreader"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/lib/ranges"
+	"github.com/takebox/rclone/vfs/vfscommon"
 )
 
 // FIXME implement max downloaders
@@ -30,8 +30,7 @@ const (
 	maxErrorCount = 10
 	// If a downloader is within this range or --buffer-size
 	// whichever is the larger, we will reuse the downloader
-	minWindow = 1024 * 1024
-)
+	minWindow = 1024 * 1024 )
 
 // Item is the interface that an item to download must obey
 type Item interface {

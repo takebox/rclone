@@ -10,7 +10,7 @@ import (
 	"sync"
 
 	colorable "github.com/mattn/go-colorable"
-	"github.com/rclone/rclone/fs"
+	"github.com/takebox/rclone/fs"
 )
 
 // VT100 codes
@@ -69,8 +69,7 @@ const (
 
 var (
 	// make sure that start is only called once
-	once sync.Once
-)
+	once sync.Once )
 
 // Start the terminal - must be called before use
 func Start() {

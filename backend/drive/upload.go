@@ -20,17 +20,16 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/fs/fserrors"
-	"github.com/rclone/rclone/lib/readers"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/fs/fserrors"
+	"github.com/takebox/rclone/lib/readers"
 	"google.golang.org/api/drive/v3"
 	"google.golang.org/api/googleapi"
 )
 
 const (
 	// statusResumeIncomplete is the code returned by the Google uploader when the transfer is not yet complete.
-	statusResumeIncomplete = 308
-)
+	statusResumeIncomplete = 308 )
 
 // resumableUpload is used by the generated APIs to provide resumable uploads.
 // It is not used by developers directly.

@@ -10,11 +10,11 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/rclone/rclone/cmd/serve/nfs"
-	"github.com/rclone/rclone/fs/object"
-	"github.com/rclone/rclone/vfs"
-	"github.com/rclone/rclone/vfs/vfscommon"
-	"github.com/rclone/rclone/vfs/vfstest"
+	"github.com/takebox/rclone/cmd/serve/nfs"
+	"github.com/takebox/rclone/fs/object"
+	"github.com/takebox/rclone/vfs"
+	"github.com/takebox/rclone/vfs/vfscommon"
+	"github.com/takebox/rclone/vfs/vfstest"
 	"github.com/stretchr/testify/require"
 )
 

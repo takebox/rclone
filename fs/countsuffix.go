@@ -21,16 +21,14 @@ const (
 	Giga                        = 1000 * Mega
 	Tera                        = 1000 * Giga
 	Peta                        = 1000 * Tera
-	Exa                         = 1000 * Peta
-)
+	Exa                         = 1000 * Peta )
 const (
 	// CountSuffixMax is the largest CountSuffix multiplier
 	CountSuffixMax = Exa
 	// CountSuffixMaxValue is the largest value that can be used to create CountSuffix
 	CountSuffixMaxValue = math.MaxInt64
 	// CountSuffixMinValue is the smallest value that can be used to create CountSuffix
-	CountSuffixMinValue = math.MinInt64
-)
+	CountSuffixMinValue = math.MinInt64 )
 
 // Turn CountSuffix into a string and a suffix
 func (x CountSuffix) string() (string, string) {

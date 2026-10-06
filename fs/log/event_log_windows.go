@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/rclone/rclone/fs"
-	"github.com/rclone/rclone/lib/atexit"
+	"github.com/takebox/rclone/fs"
+	"github.com/takebox/rclone/lib/atexit"
 	"golang.org/x/sys/windows"
 	"golang.org/x/sys/windows/svc/eventlog"
 )
@@ -21,8 +21,7 @@ const (
 )
 
 var (
-	windowsEventLog *eventlog.Log
-)
+	windowsEventLog *eventlog.Log )
 
 func startWindowsEventLog(handler *OutputHandler) error {
 	// Don't install Windows event log if it is disabled.
