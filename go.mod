@@ -1,4 +1,4 @@
-module github.com/rclone/rclone
+module github.com/takebox/rclone
 
 go 1.24.0
 
